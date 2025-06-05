@@ -1,0 +1,16 @@
+/*
+  types/index.ts
+*/
+import { CommonParams } from "./account";
+
+/*
+  types/index.ts
+*/
+export * from "./account";
+export * from "./common";
+
+export const DEFAULT_COMMON_PARAMS: CommonParams = {
+  language: "en-US",
+  page: 1,
+  sort_by: "created_at.asc",
+};

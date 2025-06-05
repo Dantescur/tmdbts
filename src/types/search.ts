@@ -1,0 +1,3 @@
+/*
+  types/search.ts
+*/

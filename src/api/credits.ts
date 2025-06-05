@@ -1,0 +1,3 @@
+/*
+  api/credits.ts
+*/
