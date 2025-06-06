@@ -1,7 +1,7 @@
 /*
   types/account.ts
 */
-import { PaginatedResponse, TmdbStatusResponse, Episode } from "./common";
+import { PaginatedResponse, Episode } from "./common";
 import { Movie } from "./movie";
 import { TVShow } from "./tv";
 
@@ -86,9 +86,17 @@ export interface DetailsResponse {
   username: string;
 }
 
+export interface FavoriteResponse {
+  status_code: number;
+  status_message: string;
+}
+
+export interface WatchlistResponse {
+  status_code: number;
+  status_message: string;
+}
+
 // Response Types
-export type FavoriteResponse = TmdbStatusResponse;
-export type WatchlistResponse = TmdbStatusResponse;
 export type FavoritesResponse = PaginatedResponse<MediaItem>;
 export type WatchlistMoviesResponse = PaginatedResponse<MediaItem>;
 export type WatchlistTvResponse = PaginatedResponse<WatchlistTv>;

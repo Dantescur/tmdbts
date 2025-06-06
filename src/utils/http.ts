@@ -23,7 +23,6 @@ export class HttpClient {
         ...config.headers,
       },
       params: {
-        language: "en-US",
         ...config.defaultParams,
       },
     });
@@ -70,6 +69,36 @@ export class HttpClient {
   ): Promise<T> {
     try {
       const response = await this.client.post(url, body, {
+        params,
+        ...config,
+      });
+      return response.data;
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        throw new TmdbError(
+          `TMDB API Error: ${err.response?.status ?? "Unknown"} - ${err.message}`,
+          err,
+        );
+      }
+      throw new TmdbError("Unknown error occurred", err);
+    }
+  }
+
+  async delete<T>(
+    url: string,
+    {
+      body,
+      params,
+      config = {},
+    }: {
+      body?: unknown;
+      params?: unknown;
+      config?: AxiosRequestConfig;
+    },
+  ): Promise<T> {
+    try {
+      const response = await this.client.delete(url, {
+        data: body,
         params,
         ...config,
       });
