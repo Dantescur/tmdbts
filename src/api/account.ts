@@ -16,7 +16,7 @@ import {
   CommonParams,
   RatedTvResponse,
   WatchlistTvResponse,
-} from "../types/account";
+} from "../types";
 
 export class AccountApi {
   private http: HttpClient;

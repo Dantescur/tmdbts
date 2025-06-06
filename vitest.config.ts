@@ -5,9 +5,10 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      setupFiles: ["./vitest.setup.ts"],
       include: ["**/*.test.ts"],
       globals: true,
-      environment: "happy-dom",
+      environment: "node",
       coverage: {
         provider: "v8",
         reporter: ["text", "json", "html"],
