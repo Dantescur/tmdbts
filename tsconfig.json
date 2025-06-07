@@ -7,10 +7,10 @@
       "DOM"
     ],
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "outDir": "./dist",
     "declaration": true,
-    "declarationMap": true,
+    "isolatedDeclarations": true,
     "emitDeclarationOnly": false,
     "strict": true,
     "noUnusedLocals": true,
