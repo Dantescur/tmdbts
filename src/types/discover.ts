@@ -1,4 +1,4 @@
-import { PaginatedResponse } from "./common";
+import { Lang, PaginatedResponse } from "./common";
 
 export interface FindMovieParams {
   certification?: string;
@@ -113,3 +113,44 @@ export interface TvShow {
 }
 
 export type FindTvResponse = PaginatedResponse<TvShow>;
+
+export interface FindByIdParams {
+  external_sources: ExternalSources;
+  language?: Lang;
+}
+
+export type ExternalSources =
+  | "imdb_id"
+  | "facebook_id"
+  | "instagram_id"
+  | "tvdb_id"
+  | "tiktok_id"
+  | "twitter_id"
+  | "wikidata_id"
+  | "youtube_id";
+
+export interface FindByIdResponse {
+  movie_results: MovieResult[];
+  person_results: any[];
+  tv_results: any[];
+  tv_episode_results: any[];
+  tv_season_results: any[];
+}
+
+export interface MovieResult {
+  adult: boolean;
+  backdrop_path: string;
+  id: number;
+  title: string;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  poster_path: string;
+  media_type: string;
+  genre_ids: number[];
+  popularity: number;
+  release_date: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}

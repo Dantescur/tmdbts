@@ -19,7 +19,7 @@ export class ConfigApi {
   }
 
   async getIsoCountries(
-    params: ConfigCountriesParams,
+    params: ConfigCountriesParams = {},
   ): Promise<ConfigCountriesResponse> {
     return this.http.get("/configuration/countries", {
       params: params,

@@ -53,11 +53,9 @@ export class CollectionsApi {
    */
   async getDetails(
     collection_id: number,
-    params: CollectionsDetailsParams,
+    params: CollectionsDetailsParams = {},
   ): Promise<CollectionDetailsResponse> {
-    return this.http.get(`/collection/${collection_id}`, {
-      params: params,
-    });
+    return this.http.get(`/collection/${collection_id}`, { params });
   }
 
   /**
@@ -78,11 +76,9 @@ export class CollectionsApi {
    */
   async getImages(
     collection_id: number,
-    params: CollectionImagesParams,
+    params: CollectionImagesParams = {},
   ): Promise<CollectionImagesResponse> {
-    return this.http.get(`/collection/${collection_id}/images`, {
-      params: params,
-    });
+    return this.http.get(`/collection/${collection_id}/images`, { params });
   }
 
   /**

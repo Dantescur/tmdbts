@@ -15,6 +15,7 @@ export * from "./collections";
 export * from "./company";
 export * from "./credits";
 export * from "./discover";
+export * from "./guest";
 
 export const DEFAULT_COMMON_PARAMS: CommonParams = {
   language: "en-US",

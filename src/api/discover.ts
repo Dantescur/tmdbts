@@ -1,4 +1,6 @@
 import {
+  FindByIdParams,
+  FindByIdResponse,
   FindMovieParams,
   FindMovieResponse,
   FindTvParams,
@@ -51,5 +53,12 @@ export class DiscoverApi {
    */
   async findTv(params: FindTvParams = {}): Promise<FindTvResponse> {
     return this.http.get("/discover/tv", { params });
+  }
+
+  async findById(
+    external_id: string,
+    params: FindByIdParams,
+  ): Promise<FindByIdResponse> {
+    return this.http.get(`/find/${external_id}`, { params });
   }
 }

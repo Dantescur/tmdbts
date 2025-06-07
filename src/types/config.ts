@@ -16,7 +16,7 @@ export interface Images {
 }
 
 export interface ConfigCountriesParams {
-  language: string;
+  language?: string;
 }
 
 export type ConfigCountriesResponse = ISO[];

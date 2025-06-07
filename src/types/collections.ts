@@ -1,5 +1,5 @@
 export interface CollectionsDetailsParams {
-  language: string;
+  language?: string;
 }
 
 export interface CollectionDetailsResponse {
@@ -30,8 +30,8 @@ export interface Part {
 }
 
 export interface CollectionImagesParams {
-  include_image_language: string;
-  language: string;
+  include_image_language?: string;
+  language?: string;
 }
 
 export interface CollectionImagesResponse {
