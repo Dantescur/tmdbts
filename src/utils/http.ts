@@ -4,16 +4,41 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { TmdbError } from "./errors";
 
+/**
+ * Configuration options for the TMDB HTTP client
+ */
 export interface TmdbConfig {
+  /** TMDB API key (required) */
   apiKey: string;
+  /** Base API URL (defaults to official TMDB API) */
   baseUrl?: string;
+  /** Additional headers to include with requests */
   headers?: Record<string, string>;
+  /** Default query parameters to include with all requests */
   defaultParams?: Record<string, unknown>;
 }
 
+/**
+ * HTTP client for making requests to the TMDB API
+ *
+ * @remarks
+ * Wraps Axios with TMDB-specific error handling and configuration
+ *
+ * @example
+ * ```ts
+ * const http = new HttpClient({
+ *   apiKey: 'your_api_key',
+ *   baseUrl: 'https://api.themoviedb.org/3'
+ * });
+ * ```
+ */
 export class HttpClient {
   private client: AxiosInstance;
 
+  /**
+   * Creates a new HttpClient instance
+   * @param config - Configuration for the TMDB client
+   */
   constructor(config: TmdbConfig) {
     this.client = axios.create({
       baseURL: config.baseUrl ?? "https://api.themoviedb.org/3",
@@ -28,6 +53,23 @@ export class HttpClient {
     });
   }
 
+  /**
+   * Makes a GET request to the TMDB API
+   * @typeParam T - Expected response type
+   * @param url - API endpoint URL (relative to base URL)
+   * @param options - Request options
+   * @param options.params - Query parameters
+   * @param options.config - Additional Axios configuration
+   * @returns Promise resolving to the response data
+   * @throws {TmdbError} When the request fails
+   *
+   * @example
+   * ```ts
+   * const movies = await http.get<Movie[]>('/discover/movie', {
+   *   params: { sort_by: 'popularity.desc' }
+   * });
+   * ```
+   */
   async get<T>(
     url: string,
     {
@@ -55,6 +97,17 @@ export class HttpClient {
     }
   }
 
+  /**
+   * Makes a POST request to the TMDB API
+   * @typeParam T - Expected response type
+   * @param url - API endpoint URL (relative to base URL)
+   * @param options - Request options
+   * @param options.body - Request body data
+   * @param options.params - Query parameters
+   * @param options.config - Additional Axios configuration
+   * @returns Promise resolving to the response data
+   * @throws {TmdbError} When the request fails
+   */
   async post<T>(
     url: string,
     {
@@ -84,6 +137,17 @@ export class HttpClient {
     }
   }
 
+  /**
+   * Makes a DELETE request to the TMDB API
+   * @typeParam T - Expected response type
+   * @param url - API endpoint URL (relative to base URL)
+   * @param options - Request options
+   * @param options.body - Request body data (for DELETE with body)
+   * @param options.params - Query parameters
+   * @param options.config - Additional Axios configuration
+   * @returns Promise resolving to the response data
+   * @throws {TmdbError} When the request fails
+   */
   async delete<T>(
     url: string,
     {

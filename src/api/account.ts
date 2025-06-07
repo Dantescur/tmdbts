@@ -18,13 +18,42 @@ import {
   WatchlistTvResponse,
 } from "../types";
 
+/**
+ * Provides access to TMDB account-related endpoints
+ *
+ * @remarks
+ * This class handles all operations related to user accounts including:
+ * - Account details
+ * - Favorite management
+ * - Watchlist operations
+ * - Rated content
+ * - User lists
+ *
+ * @example
+ * ```typescript
+ * const tmdbts = new Tmdbts({ apiKey: 'your_api_key' });
+ *
+ * // Get account details
+ * const details = await tmdbts.account.getDetails(123, 'session_id');
+ * ```
+ */
 export class AccountApi {
   private http: HttpClient;
 
+  /**
+   * Creates a new AccountApi instance
+   * @param http - Configured HttpClient instance for making requests
+   */
   constructor(http: HttpClient) {
     this.http = http;
   }
 
+  /**
+   * Builds common query parameters with defaults
+   * @param params - Partial parameters to override defaults
+   * @returns Complete CommonParams object with defaults filled in
+   * @internal
+   */
   private buildQueryParams(params: Partial<CommonParams> = {}): CommonParams {
     return {
       language: "en-US",
@@ -34,6 +63,17 @@ export class AccountApi {
     };
   }
 
+  /**
+   * Get the primary account details
+   * @param accountId - TMDB account ID
+   * @param sessionId - Optional session ID for authenticated requests
+   * @returns Promise resolving to account details
+   *
+   * @example
+   * ```typescript
+   * const details = await tmdbts.account.getDetails(12345, 'valid_session_id');
+   * ```
+   */
   async getDetails(
     accountId: number,
     sessionId?: string,
@@ -43,6 +83,22 @@ export class AccountApi {
     });
   }
 
+  /**
+   * Mark a media item as favorite
+   * @param accountId - TMDB account ID
+   * @param data - Favorite parameters including media type and ID
+   * @param sessionId - Valid session ID
+   * @returns Promise resolving to operation status
+   *
+   * @example
+   * ```typescript
+   * await tmdbts.account.markAsFavorite(123, {
+   *   media_type: 'movie',
+   *   media_id: 550,
+   *   favorite: true
+   * }, 'session_id');
+   * ```
+   */
   async markAsFavorite(
     accountId: number,
     data: MarkAsFavoriteParams,
@@ -54,6 +110,12 @@ export class AccountApi {
     });
   }
 
+  /**
+   * Get a list of favorite movies
+   * @param accountId - TMDB account ID
+   * @param params - Optional query parameters
+   * @returns Promise resolving to favorite movies response
+   */
   async getFavoriteMovies(
     accountId: number,
     params: Partial<CommonParams> = {},
@@ -64,6 +126,12 @@ export class AccountApi {
     );
   }
 
+  /**
+   * Get a list of favorite TV shows
+   * @param accountId - TMDB account ID
+   * @param params - Optional query parameters
+   * @returns Promise resolving to favorite TV shows response
+   */
   async getFavoriteTVShows(
     accountId: number,
     params: Partial<CommonParams> = {},
@@ -74,6 +142,13 @@ export class AccountApi {
     );
   }
 
+  /**
+   * Add a media item to watchlist
+   * @param accountId - TMDB account ID
+   * @param data - Watchlist parameters including media type and ID
+   * @param sessionId - Valid session ID
+   * @returns Promise resolving to operation status
+   */
   async addToWatchlist(
     accountId: number,
     data: AddToWatchlistParams,
@@ -88,6 +163,12 @@ export class AccountApi {
     );
   }
 
+  /**
+   * Get movies in watchlist
+   * @param accountId - TMDB account ID
+   * @param params - Optional query parameters
+   * @returns Promise resolving to watchlist movies response
+   */
   async getWatchlistMovies(
     accountId: number,
     params: Partial<CommonParams> = {},
@@ -98,6 +179,12 @@ export class AccountApi {
     );
   }
 
+  /**
+   * Get TV shows in watchlist
+   * @param accountId - TMDB account ID
+   * @param params - Optional query parameters
+   * @returns Promise resolving to watchlist TV shows response
+   */
   async getWatchlistTv(
     accountId: number,
     params: Partial<CommonParams> = {},
@@ -108,6 +195,13 @@ export class AccountApi {
     );
   }
 
+  /**
+   * Get lists created by account
+   * @param accountId - TMDB account ID
+   * @param sessionId - Valid session ID
+   * @param params - Optional pagination parameters
+   * @returns Promise resolving to account lists response
+   */
   async getLists(
     accountId: number,
     sessionId: string,
@@ -121,6 +215,12 @@ export class AccountApi {
     });
   }
 
+  /**
+   * Get rated movies
+   * @param accountId - TMDB account ID
+   * @param params - Optional query parameters
+   * @returns Promise resolving to rated movies response
+   */
   async getRatedMovies(
     accountId: number,
     params: Partial<CommonParams> = {},
@@ -131,6 +231,12 @@ export class AccountApi {
     );
   }
 
+  /**
+   * Get rated TV shows
+   * @param accountId - TMDB account ID
+   * @param params - Optional query parameters
+   * @returns Promise resolving to rated TV shows response
+   */
   async getRatedTVShows(
     accountId: number,
     params: Partial<CommonParams> = {},
@@ -140,6 +246,12 @@ export class AccountApi {
     });
   }
 
+  /**
+   * Get rated TV episodes
+   * @param accountId - TMDB account ID
+   * @param params - Optional query parameters
+   * @returns Promise resolving to rated TV episodes response
+   */
   async getRatedTVEpisodes(
     accountId: number,
     params: Partial<CommonParams> = {},

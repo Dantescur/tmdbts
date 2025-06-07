@@ -28,6 +28,7 @@
   "scripts": {
     "build": "tsdown --from-vite vitest",
     "lint:package": "publint",
+    "docs": "typedoc --options typedoc.json",
     "dev": "tsdown --watch",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -43,6 +44,8 @@
     "publint": "^0.3.12",
     "rolldown-plugin-dts": "^0.13.8",
     "tsdown": "^0.12.7",
+    "typedoc": "^0.28.5",
+    "typedoc-github-theme": "^0.3.0",
     "typescript": "~5.8.3",
     "unplugin-unused": "^0.5.0",
     "vite": "npm:rolldown-vite@latest",
