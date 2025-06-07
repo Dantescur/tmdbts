@@ -26,10 +26,10 @@ export interface Media {
   origin_country: string[];
   character: string;
   episodes: any[];
-  seasons: Season[];
+  seasons: SeasonCredits[];
 }
 
-export interface Season {
+export interface SeasonCredits {
   air_date: string;
   episode_count: number;
   id: number;

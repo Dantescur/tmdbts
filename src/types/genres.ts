@@ -1,5 +1,3 @@
-import { PaginatedResponse } from "./common";
-
 export interface GenreParams {
   language?: string;
 }

@@ -41,7 +41,7 @@ export interface FindMovieParams {
   year?: number;
 }
 
-export interface Movie {
+export interface DiscoveredMovie {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -58,7 +58,7 @@ export interface Movie {
   vote_count: number;
 }
 
-export type FindMovieResponse = PaginatedResponse<Movie>;
+export type FindMovieResponse = PaginatedResponse<DiscoveredMovie>;
 
 export interface FindTvParams {
   air_date_gte?: string; // ISO 8601 date, e.g., "2020-01-01"

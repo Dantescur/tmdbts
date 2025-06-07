@@ -1,13 +1,13 @@
 import { PaginatedResponse } from "./common";
-import { Movie } from "./discover";
+import { DiscoveredMovie } from "./discover";
 
-export interface GhesRatedParams {
+export interface GuestRatedParams {
   language?: string;
   page?: number;
   sort_by?: string;
 }
 
-export type GuessRatedMovieResponse = PaginatedResponse<Movie>;
+export type GuestRatedMovieResponse = PaginatedResponse<DiscoveredMovie>;
 
 export interface RatedTv {
   adult: boolean;
