@@ -11,6 +11,7 @@ export * from "./common";
 export * from "./auth";
 export * from "./certs";
 export * from "./changes";
+export * from "./collections";
 
 export const DEFAULT_COMMON_PARAMS: CommonParams = {
   language: "en-US",

@@ -5,7 +5,6 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      setupFiles: ["./vitest.setup.ts"],
       include: ["**/*.test.ts"],
       globals: true,
       environment: "node",
