@@ -35,18 +35,31 @@ export interface TmdbConfig {
 export class HttpClient {
   private client: AxiosInstance;
 
+  /** Public base URL used in requests */
+  public readonly baseUrl: string;
+
+  /** Public headers (merged defaults) */
+  public readonly headers: Record<string, string>;
+
+  /** API Key (masked suggestion available later) */
+  public readonly apiKey: string;
+
   /**
    * Creates a new HttpClient instance
    * @param config - Configuration for the TMDB client
    */
   constructor(config: TmdbConfig) {
+    this.apiKey = config.apiKey;
+    this.baseUrl = config.baseUrl ?? "https://api.themoviedb.org/3";
+    this.headers = {
+      Authorization: `Bearer ${config.apiKey}`,
+      "Content-Type": "application/json",
+      ...config.headers,
+    };
+
     this.client = axios.create({
-      baseURL: config.baseUrl ?? "https://api.themoviedb.org/3",
-      headers: {
-        Authorization: `Bearer ${config.apiKey}`,
-        "Content-Type": "application/json",
-        ...config.headers,
-      },
+      baseURL: this.baseUrl,
+      headers: this.headers,
       params: {
         ...config.defaultParams,
       },
