@@ -1,14 +1,14 @@
 import { http, HttpResponse } from "msw";
-import { server } from "../../tests/mocks";
+import { server } from "../../../tests/mocks";
 import { describe, it, expect } from "vitest";
-import { HttpClient } from "../utils/http";
-import { DiscoverApi } from "./discover";
+import { HttpClient } from "../../utils/http";
+import { DiscoverApi } from "../discover";
 import {
   FindMovieParams,
   FindMovieResponse,
   FindTvParams,
   FindTvResponse,
-} from "../types";
+} from "../../types";
 
 // Mock response
 const mockFindMovieResponse: FindMovieResponse = {

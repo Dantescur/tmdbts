@@ -1,9 +1,9 @@
 // src/api/account.test.ts
 import { describe, it, expect, afterEach } from "vitest";
-import { AccountApi } from "./account";
-import { HttpClient } from "../utils/http";
+import { AccountApi } from "../account";
+import { HttpClient } from "../../utils/http";
 import { http, HttpResponse } from "msw";
-import { server } from "../../tests/mocks";
+import { server } from "../../../tests/mocks";
 import {
   mockDetailResponse,
   mockMediaFavResponse,
@@ -16,7 +16,7 @@ import {
   mockRatedMoviesResponse,
   mockRatedTvResponse,
   mockRatedTvEpisodesResponse,
-} from "../../tests/handlers";
+} from "../../../tests/handlers";
 
 describe("AccountApi", () => {
   const httpClient = new HttpClient({ apiKey: "test-key" });
@@ -89,6 +89,24 @@ describe("AccountApi", () => {
     );
   });
 
+  it("should NOT include session_id param if undefined", async () => {
+    let receivedUrl: URL | undefined;
+
+    server.use(
+      http.get("https://api.themoviedb.org/3/account/:id", ({ request }) => {
+        receivedUrl = new URL(request.url);
+        return HttpResponse.json(mockDetailResponse);
+      }),
+    );
+
+    const res = await accountApi.getDetails(123);
+
+    expect(res).toEqual(mockDetailResponse);
+
+    expect(receivedUrl).toBeDefined();
+    expect(receivedUrl!.searchParams.has("session_id")).toBe(false);
+  });
+
   it("should mark media as favorite", async () => {
     const response = await accountApi.markAsFavorite(
       123,
@@ -137,6 +155,11 @@ describe("AccountApi", () => {
 
   it("should get account lists", async () => {
     const response = await accountApi.getLists(123, "session123", { page: 1 });
+    expect(response).toEqual(mockListsResponse);
+  });
+
+  it("should get account lists with default page 1", async () => {
+    const response = await accountApi.getLists(123, "session123");
     expect(response).toEqual(mockListsResponse);
   });
 

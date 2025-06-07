@@ -1,8 +1,8 @@
 import { expect, it, describe } from "vitest";
-import { CertsApi } from "./certs";
-import { HttpClient } from "../utils";
+import { CertsApi } from "../certs";
+import { HttpClient } from "../../utils";
 import { http, HttpResponse } from "msw";
-import { server } from "../../tests/mocks";
+import { server } from "../../../tests/mocks";
 import { faker } from "@faker-js/faker";
 
 describe("CertsApi", () => {

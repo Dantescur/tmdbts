@@ -1,13 +1,13 @@
 import { expect, it, describe } from "vitest";
-import { HttpClient } from "../utils";
+import { HttpClient } from "../../utils";
 import { http, HttpResponse } from "msw";
-import { server } from "../../tests/mocks";
-import { CollectionsApi } from "./collections";
+import { server } from "../../../tests/mocks";
+import { CollectionsApi } from "../collections";
 import {
   CollectionDetailsResponse,
   CollectionImagesResponse,
   CollectionTranslationResponse,
-} from "../types";
+} from "../../types";
 
 const mockDetailsResponse: CollectionDetailsResponse = {
   id: 10,

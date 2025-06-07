@@ -1,8 +1,8 @@
 import { expect, it, describe } from "vitest";
-import { AuthApi } from "./auth";
-import { HttpClient } from "../utils";
+import { AuthApi } from "../auth";
+import { HttpClient } from "../../utils";
 import { http, HttpResponse } from "msw";
-import { server } from "../../tests/mocks";
+import { server } from "../../../tests/mocks";
 
 describe("AuthApi", () => {
   const httpClient = new HttpClient({ apiKey: "test-key" });
