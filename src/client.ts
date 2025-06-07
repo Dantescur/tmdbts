@@ -5,6 +5,9 @@ import {
   CertsApi,
   ChangesApi,
   CollectionsApi,
+  CompaniesApi,
+  CreditsApi,
+  DiscoverApi,
 } from "./api";
 import { HttpClient, TmdbConfig } from "./utils";
 
@@ -95,6 +98,12 @@ export class Tmdbts {
    */
   public collection: CollectionsApi;
 
+  public company: CompaniesApi;
+
+  public credit: CreditsApi;
+
+  public discover: DiscoverApi;
+
   /**
    * Creates a new TMDB client instance
    * @param config - Configuration options
@@ -106,5 +115,8 @@ export class Tmdbts {
     this.certifications = new CertsApi(httpClient);
     this.changes = new ChangesApi(httpClient);
     this.collection = new CollectionsApi(httpClient);
+    this.company = new CompaniesApi(httpClient);
+    this.credit = new CreditsApi(httpClient);
+    this.discover = new DiscoverApi(httpClient);
   }
 }

@@ -62,10 +62,10 @@ export interface Poster {
 
 export interface CollectionTranslationResponse {
   id: number;
-  translations: Translation[];
+  translations: CollectionTranslation[];
 }
 
-export interface Translation {
+export interface CollectionTranslation {
   iso_3166_1: string;
   iso_639_1: string;
   name: string;
