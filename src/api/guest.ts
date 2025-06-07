@@ -1,11 +1,8 @@
 import { GuestSessionResponse, RatedTvEpisodesResponse } from "../types";
-import {
-  GhesRatedParams as GhestRatedParams,
-  GuestTvResponse,
-} from "../types/guest";
+import { GuestRatedParams, GuestTvResponse } from "../types/guest";
 import { HttpClient } from "../utils";
 
-export class GuessApi {
+export class GuestApi {
   private http: HttpClient;
 
   constructor(http: HttpClient) {
@@ -14,7 +11,7 @@ export class GuessApi {
 
   async ratedMovies(
     guest_session_id: string,
-    params: GhestRatedParams,
+    params: GuestRatedParams,
   ): Promise<GuestSessionResponse> {
     return this.http.get(`/guest_session/${guest_session_id}/rated/movies`, {
       params,
@@ -23,7 +20,7 @@ export class GuessApi {
 
   async ratedTvs(
     guest_session_id: string,
-    params: GhestRatedParams,
+    params: GuestRatedParams,
   ): Promise<GuestTvResponse> {
     return this.http.get(`/guest_session/${guest_session_id}/rated/tv`, {
       params,
@@ -32,7 +29,7 @@ export class GuessApi {
 
   async ratedTvEposides(
     guest_session_id: string,
-    params: GhestRatedParams,
+    params: GuestRatedParams,
   ): Promise<RatedTvEpisodesResponse> {
     return this.http.get(`/guest_session/${guest_session_id}/rated/tv`, {
       params,
