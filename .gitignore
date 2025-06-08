@@ -27,4 +27,3 @@ coverage
 dist
 html
 node_modules
-api.specs.json
