@@ -12,6 +12,11 @@ import {
   WatchlistTvResponse,
   RatedTvResponse,
 } from "../src/types";
+import spec from "../api.specs.json";
+import { fromOpenApi } from "@mswjs/source/open-api";
+import { OpenAPIV3 } from "openapi-types";
+
+export const openApiHandlers = await fromOpenApi(spec as OpenAPIV3.Document);
 
 interface FavoriteRequestBody {
   media_type: "movie" | "tv";
@@ -27,15 +32,15 @@ interface WatchlistRequestBody {
 
 export const mockDetailResponse: DetailsResponse = {
   avatar: {
-    gravatar: { hash: "abc123" },
-    tmdb: { avatar_path: "/avatar.jpg" },
+    gravatar: { hash: "c9e9fc152ee756a900db85757c29815d" },
+    tmdb: { avatar_path: "/xy44UvpbTgzs9kWmp4C3fEaCl5h.png" },
   },
-  id: 123,
+  id: 548,
   iso_639_1: "en",
-  iso_3166_1: "US",
-  name: "Test User",
+  iso_3166_1: "CA",
+  name: "Travis Bell",
   include_adult: false,
-  username: "testuser",
+  username: "travisbell",
 };
 
 export const mockMediaFavResponse: FavoriteResponse = {
@@ -48,19 +53,20 @@ export const mockFavMoviesResponse: FavoritesResponse = {
   results: [
     {
       adult: false,
-      backdrop_path: "/backdrop.jpg",
-      genre_ids: [28],
-      id: 456,
+      backdrop_path: "/se5Hxz7PArQZOG3Nx2bpfOhLhtV.jpg",
+      genre_ids: [28, 12, 16, 10751],
+      id: 9806,
       original_language: "en",
-      original_title: "Test Movie",
-      overview: "A test movie.",
-      popularity: 100,
-      poster_path: "/poster.jpg",
-      release_date: "2023-01-01",
-      title: "Test Movie",
+      original_title: "The Incredibles",
+      overview:
+        "Bob Parr has given up his superhero days to log in time as an insurance adjuster and raise his three children with his formerly heroic wife in suburbia. But when he receives a mysterious assignment, it's time to get back into costume.",
+      popularity: 71.477,
+      poster_path: "/2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
+      release_date: "2004-10-27",
+      title: "The Incredibles",
       video: false,
-      vote_average: 7.5,
-      vote_count: 1000,
+      vote_average: 7.702,
+      vote_count: 16162,
     },
   ],
   total_pages: 1,

@@ -7,6 +7,7 @@ export default mergeConfig(
     test: {
       include: ["**/*.test.ts"],
       globals: true,
+      setupFiles: ["vitest.setup.ts"],
       environment: "node",
       reporters: ["default", "html"],
       coverage: {
