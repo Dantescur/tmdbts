@@ -32,6 +32,8 @@ import { HttpClient, TmdbConfig } from "./utils";
  * ```
  */
 export class Tmdbts {
+  private readonly http: HttpClient;
+
   /**
    * Account management and user-specific data
    * @example
@@ -109,14 +111,34 @@ export class Tmdbts {
    * @param config - Configuration options
    */
   constructor(config: TmdbConfig) {
-    const httpClient = new HttpClient(config);
-    this.account = new AccountApi(httpClient);
-    this.auth = new AuthApi(httpClient);
-    this.certifications = new CertsApi(httpClient);
-    this.changes = new ChangesApi(httpClient);
-    this.collection = new CollectionsApi(httpClient);
-    this.company = new CompaniesApi(httpClient);
-    this.credit = new CreditsApi(httpClient);
-    this.discover = new DiscoverApi(httpClient);
+    this.http = new HttpClient(config);
+    this.account = new AccountApi(this.http);
+    this.auth = new AuthApi(this.http);
+    this.certifications = new CertsApi(this.http);
+    this.changes = new ChangesApi(this.http);
+    this.collection = new CollectionsApi(this.http);
+    this.company = new CompaniesApi(this.http);
+    this.credit = new CreditsApi(this.http);
+    this.discover = new DiscoverApi(this.http);
+  }
+
+  public getClientInfo(): {
+    baseUrl: string | null;
+    headers: Record<string, string>;
+    apiKeyMasked: string | null;
+  } {
+    const axiosConfig = (this.http as any).client?.defaults ?? {};
+
+    const authorization = axiosConfig.headers?.Authorization;
+    const apiKeyMasked =
+      typeof authorization === "string"
+        ? "****" + authorization.slice(-4)
+        : null;
+
+    return {
+      baseUrl: axiosConfig.baseURL ?? null,
+      headers: axiosConfig.headers ?? {},
+      apiKeyMasked,
+    };
   }
 }
