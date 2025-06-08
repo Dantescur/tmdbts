@@ -8,7 +8,9 @@ export default mergeConfig(
       include: ["**/*.test.ts"],
       globals: true,
       environment: "node",
+      reporters: ["default", "html"],
       coverage: {
+        enabled: true,
         provider: "v8",
         reporter: ["text", "json", "html"],
       },
