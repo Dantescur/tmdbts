@@ -96,6 +96,6 @@ export class CollectionsApi {
   async getTranslations(
     collection_id: number,
   ): Promise<CollectionTranslationResponse> {
-    return this.http.get(`/collections/${collection_id}/translations`, {});
+    return this.http.get(`/collection/${collection_id}/translations`, {});
   }
 }

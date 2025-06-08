@@ -8,7 +8,7 @@ import {
   ValidateKeyResponse,
   ValidateWithLoginParams,
 } from "../types";
-import { HttpClient } from "../utils";
+import { HttpClient, TmdbError } from "../utils";
 
 /**
  * Handles TMDB authentication and session management
@@ -164,6 +164,9 @@ export class AuthApi {
   async validateWithLogin(
     data: ValidateWithLoginParams,
   ): Promise<RequestTokenResponse> {
+    if (!data.password || !data.username || !data.request_token) {
+      throw new TmdbError("Missing reuired fields");
+    }
     return this.http.post("/authentication/token/validate_with_login", {
       body: {
         username: data.username,
