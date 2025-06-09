@@ -27,6 +27,11 @@ describe("AuthApi", () => {
     );
   });
 
+  it("should generate URL without redirect parameter if not provided", () => {
+    const url = authApi.getAuthenticationUrl("abc123");
+    expect(url).toBe("https://www.themoviedb.org/authenticate/abc123");
+  });
+
   it("should create a session", async () => {
     const example = getOpenApiExample(
       "/3/authentication/session/new",

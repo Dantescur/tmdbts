@@ -1,9 +1,9 @@
 import { PaginatedResponse } from "./common";
 
 export interface ChangedDataParams {
-  end_date: Date;
-  page: number;
-  start_date: Date;
+  end_date?: Date;
+  page?: number;
+  start_date?: Date;
 }
 
 export interface ChangedData {

@@ -55,7 +55,7 @@ export class ChangesApi {
    * ```
    */
   async getChangedMovieIds(
-    params: ChangedDataParams,
+    params?: ChangedDataParams,
   ): Promise<ChangedResponse> {
     return this.http.get("/movie/changes", {
       params: params,

@@ -63,4 +63,14 @@ describe("DetailsApi", () => {
       );
     });
   });
+
+  describe("findById", () => {
+    it("should find movie by external id", async () => {
+      const example = getOpenApiExample("/3/find/{external_id}", "get", "200");
+      const response = await discoverApi.findById("123432", {
+        external_sources: "imdb_id",
+      });
+      expect(response).toEqual(example);
+    });
+  });
 });
