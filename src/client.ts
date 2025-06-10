@@ -21,24 +21,24 @@ import { HttpClient, TmdbConfig } from "./utils";
  * @example
  * ```typescript
  * // Basic initialization
- * const tmdbts = new Tmdb({
+ * const tsmdb = new Tmdb({
  *   apiKey: 'your_api_key_here',
  *   baseUrl: 'https://api.themoviedb.org/3' // optional
  * });
  *
  * // Using different API domains
- * const accountDetails = await tmdbts.account.getDetails(123);
- * const movieCerts = await tmdbts.certifications.getMovieCertifications();
+ * const accountDetails = await tsmdb.account.getDetails(123);
+ * const movieCerts = await tsmdb.certifications.getMovieCertifications();
  * ```
  */
-export class Tmdbts {
+export class Tsmdb {
   private readonly http: HttpClient;
 
   /**
    * Account management and user-specific data
    * @example
    * ```typescript
-   * await tmdbts.account.getWatchlistMovies(123);
+   * await tsmdb.account.getWatchlistMovies(123);
    * ```
    */
   public account: AccountApi;
@@ -47,7 +47,7 @@ export class Tmdbts {
    * Authentication and session management
    * @example
    * ```typescript
-   * const session = await tmdbts.auth.createSession(requestToken);
+   * const session = await tsmdb.auth.createSession(requestToken);
    * ```
    */
   public auth: AuthApi;
@@ -56,7 +56,7 @@ export class Tmdbts {
    * Content certification data
    * @example
    * ```typescript
-   * const certifications = await tmdbts.certifications.getTvCertifications();
+   * const certifications = await tsmdb.certifications.getTvCertifications();
    * ```
    */
   public certifications: CertsApi;
@@ -65,7 +65,7 @@ export class Tmdbts {
    * Change tracking functionality
    * @example
    * ```typescript
-   * const changes = await tmdbts.changes.getChangedMovieIds({
+   * const changes = await tsmdb.changes.getChangedMovieIds({
    *   start_date: new Date('2023-01-01'),
    *   end_date: new Date('2023-01-31')
    * });
@@ -82,20 +82,20 @@ export class Tmdbts {
    * @example
    * ```typescript
    * // Initialize the client
-   * const tmdbts = new Tmdbts({ apiKey: 'your_api_key' });
+   * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
    *
    * // Get details for the Star Wars collection (ID: 10)
-   * const starWars = await tmdbts.collection.getDetails(10, {
+   * const starWars = await tsmdb.collection.getDetails(10, {
    *   language: 'en-US'
    * });
    *
    * // Get images for the James Bond collection
-   * const bondImages = await tmdbts.collection.getImages(645, {
+   * const bondImages = await tsmdb.collection.getImages(645, {
    *   include_image_language: 'en,null'
    * });
    *
    * // Get available translations for a collection
-   * const translations = await tmdbts.collection.getTranslations(10);
+   * const translations = await tsmdb.collection.getTranslations(10);
    * ```
    */
   public collection: CollectionsApi;

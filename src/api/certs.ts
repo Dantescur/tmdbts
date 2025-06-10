@@ -7,12 +7,12 @@ import { HttpClient } from "../utils";
  * @example
  * ```typescript
  * // Getting movie certifications
- * const tmdbts = new Tmdbts({ apiKey: 'your_api_key' });
- * const movieCerts = await tmdbts.certificates.getMovieCertifications();
+ * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
+ * const movieCerts = await tsmdb.certificates.getMovieCertifications();
  * console.log('US Movie Certifications:', movieCerts.certifications.US);
  *
  * // Getting TV certifications
- * const tvCerts = await tmdbts.certificates.getTvCertifications();
+ * const tvCerts = await tsmdb.certificates.getTvCertifications();
  * console.log('UK TV Certifications:', tvCerts.certifications.GB);
  * ```
  */

@@ -31,10 +31,10 @@ import {
  *
  * @example
  * ```typescript
- * const tmdbts = new Tmdbts({ apiKey: 'your_api_key' });
+ * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
  *
  * // Get account details
- * const details = await tmdbts.account.getDetails(123, 'session_id');
+ * const details = await tsmdb.account.getDetails(123, 'session_id');
  * ```
  */
 export class AccountApi {
@@ -71,7 +71,7 @@ export class AccountApi {
    *
    * @example
    * ```typescript
-   * const details = await tmdbts.account.getDetails(12345, 'valid_session_id');
+   * const details = await tsmdb.account.getDetails(12345, 'valid_session_id');
    * ```
    */
   async getDetails(
@@ -92,7 +92,7 @@ export class AccountApi {
    *
    * @example
    * ```typescript
-   * await tmdbts.account.markAsFavorite(123, {
+   * await tsmdb.account.markAsFavorite(123, {
    *   media_type: 'movie',
    *   media_id: 550,
    *   favorite: true

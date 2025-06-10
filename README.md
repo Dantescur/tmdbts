@@ -1,12 +1,12 @@
-# Tmdbts: A TypeScript Client for The Movie Database (TMDb) API
+# Tsmdb: A TypeScript Client for The Movie Database (TMDb) API
 
 <p align="center">
-  <img width="200" alt="Tmdbts logo" src="./logo.png">
+  <img width="200" alt="Tsmdb logo" src="./logo.png">
   <br>
   <em>A type-safe TMDb API client for Node.js and browsers</em>
 </p>
 
-`Tmdbts` is a robust and modular TypeScript client library designed to make
+`Tsmdb` is a robust and modular TypeScript client library designed to make
 interacting with The Movie Database (TMDb) API simple and efficient. It
 provides a structured, type-safe way to access various TMDb endpoints, from
 fetching movie and TV show details to managing user accounts and handling authentication.
@@ -29,35 +29,35 @@ fetching movie and TV show details to managing user accounts and handling authen
 
 ## 🚀 Installation
 
-You can easily add `Tmdbts` to your project using:
+You can easily add `Tsmdb` to your project using:
 
 ```bash
-pnpm install tmdbts
+pnpm install tsmdb
 
-npm install tmdbts
+npm install tsmdb
 
-yarn add tmdbts
+yarn add tsmdb
 
-bun add tmdbts
+bun add tsmdb
 
 ```
 
 ## 📚 Usage
 
-To get started with `Tmdbts`, you'll first need a TMDb API key. If you don't have
+To get started with `Tsmdb`, you'll first need a TMDb API key. If you don't have
 one, you can easily obtain it by registering on the [TMDb website](https://developer.themoviedb.org/reference/intro/authentication).
 
-Here's a basic example demonstrating how to initialize and use the `Tmdbts`
+Here's a basic example demonstrating how to initialize and use the `Tsmdb`
 client to fetch some data:
 
 ```typescript
-import { Tmdbts } from "tmdbts";
+import { Tsmdb } from "tsmdb";
 
 const API_KEY = "YOUR_TMDB_API_KEY"; // ⚠️ Replace with your actual TMDb API key!
 
 async function fetchData() {
   try {
-    const tmdb = new Tmdbts({ apiKey: API_KEY });
+    const tmdb = new Tsmdb({ apiKey: API_KEY });
 
     // Example 1: Get authenticated account details
     const accountDetails = await tmdb.account.getDetails();
@@ -92,19 +92,19 @@ fetchData();
 
 ## 🏗️ API Structure
 
-The `Tmdbts` client is meticulously structured to mirror the TMDb API's own
+The `Tsmdb` client is meticulously structured to mirror the TMDb API's own
 organization, making it incredibly intuitive to navigate and find the methods
 you need.
 
 > [!TIP]
 > I highly recommend using this library alongside the official themoviedb
 > [API Reference](https://developer.themoviedb.org/reference/intro/getting-started).
-> All endpoints within `Tmdbts` are grouped in the same logical way as they are
+> All endpoints within `Tsmdb` are grouped in the same logical way as they are
 > documented by TMDb.
 
 ```typescript
 /* prettier-ignore */
-new Tmdbts({ apiKey: '...' })
+new Tsmdb({ apiKey: '...' })
   .account // Methods related to user accounts
   .auth    // Authentication and session management
   .certifications // Movie and TV show certifications
@@ -122,7 +122,7 @@ new Tmdbts({ apiKey: '...' })
 
 ## ⚙️ Configuration
 
-When initializing `Tmdbts`, you can provide a `TmdbConfig` object to customize its
+When initializing `Tsmdb`, you can provide a `TmdbConfig` object to customize its
 behavior. This allows you to set your API key, override the base URL, add
 custom headers, or define default query parameters for all requests.
 
@@ -152,12 +152,12 @@ interface TmdbConfig {
 Example:
 
 ```typescript
-const tmdb = new Tmdbts({
+const tmdb = new Tsmdb({
   apiKey: "YOUR_API_KEY",
   baseUrl: "https://api.themoviedb.org/3/", // This is the default, but you can
   override it for testing or proxying
   headers: {
-    "X-Powered-By": "Tmdbts-Client", // Add a custom header
+    "X-Powered-By": "Tsmdb-Client", // Add a custom header
   },
   defaultParams: {
     language: "fr-FR", // Set default language for all requests
@@ -170,7 +170,7 @@ const tmdb = new Tmdbts({
 
 ## 🚫 Error Handling
 
-All API methods in `Tmdbts`are promise-based and will reject with an error if
+All API methods in `Tsmdb`are promise-based and will reject with an error if
 something goes wrong during the API call (e.g., network issues, invalid API key,
 TMDb server errors). The library is designed to throw a custom `TmdbError` for
 API-specific issues, allowing you to catch and handle them gracefully.
@@ -188,7 +188,7 @@ class TmdbError extends Error {
 
 ## 🤝 Contributing
 
-Contributions are always welcome! If you'd like to contribute to `Tmdbts`, please
+Contributions are always welcome! If you'd like to contribute to `Tsmdb`, please
 follow these steps:
 
 1. Fork the repository.

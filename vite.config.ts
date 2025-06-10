@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "tmdbts",
-      fileName: (format) => `tmdbts.${format === "es" ? "mjs" : "cjs"}`,
+      name: "tsmdb",
+      fileName: (format) => `tsmdb.${format === "es" ? "mjs" : "cjs"}`,
       formats: ["es", "cjs"],
     },
     rollupOptions: {
