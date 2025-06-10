@@ -2,6 +2,7 @@
   "name": "tmdbts",
   "version": "0.0.1",
   "type": "module",
+  "repository": "https://github.com/dantescur/tmdbts",
   "description": "A type-safe, intuitive TypeScript library for the TMDB API",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
