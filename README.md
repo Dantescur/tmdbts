@@ -35,9 +35,11 @@ fetching movie and TV show details to managing user accounts and handling authen
 - **Promise-Based**: All API calls return Promises, making it easy to handle
   asynchronous operations with `async/await`.
 
+---
+
 ## 🚀 Installation
 
-You can easily add `Tmdbts` to your project using `pnpm`:
+You can easily add `Tmdbts` to your project using:
 
 ```bash
 pnpm install tmdbts
@@ -47,6 +49,7 @@ npm install tmdbts
 yarn add tmdbts
 
 bun add tmdbts
+
 ```
 
 ## 📚 Usage
