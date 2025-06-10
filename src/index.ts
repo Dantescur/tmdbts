@@ -7,10 +7,10 @@
  * @example
  * ```typescript
  * // Basic usage
- * import { Tmdbts } from 'tmdbts';
+ * import { Tsmdb } from 'tsmdb';
  *
- * const tmdb = new Tmdbts({ apiKey: 'your_key' });
- * const popularMovies = await tmdbts.movies.getPopular();
+ * const tmdb = new Tsmdb({ apiKey: 'your_key' });
+ * const popularMovies = await tsmdb.movies.getPopular();
  * ```
  */
 export * from "./client";

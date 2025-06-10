@@ -23,7 +23,7 @@ export class DiscoverApi {
    *
    * @example
    * ```typescript
-   * const movies = await tmdbts.discover.findMovie({
+   * const movies = await tsmdb.discover.findMovie({
    *   language: "en-US",
    *   with_genres: "28|12", // Action OR Adventure
    *   primary_release_year: 2023,
@@ -43,7 +43,7 @@ export class DiscoverApi {
    *
    * @example
    * ```typescript
-   * const shows = await tmdbts.discover.findTv({
+   * const shows = await tsmdb.discover.findTv({
    *   language: "en-US",
    *   with_genres: "18|35",
    *   first_air_date_year: 2023,
