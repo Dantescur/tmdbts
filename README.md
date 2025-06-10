@@ -1,15 +1,5 @@
 # Tmdbts: A TypeScript Client for The Movie Database (TMDb) API
 
-- [Tmdbts: A TypeScript Client for The Movie Database (TMDb) API](#tmdbts-a-typescript-client-for-the-movie-database-tmdb-api)
-  - [✨ Features](#%E2%9C%A8-features)
-  - [🚀 Installation](#%F0%9F%9A%80-installation)
-  - [📚 Usage](#%F0%9F%93%9A-usage)
-  - [🏗️ API Structure](#%F0%9F%8F%97%EF%B8%8F-api-structure)
-  - [⚙️ Configuration](#%E2%9A%99%EF%B8%8F-configuration)
-  - [🚫 Error Handling](#%F0%9F%9A%AB-error-handling)
-  - [🤝 Contributing](#%F0%9F%A4%9D-contributing)
-  - [📄 License](#%F0%9F%93%84-license)
-
 <p align="center">
   <img width="200" alt="Tmdbts logo" src="./logo.png">
   <br>
