@@ -22,7 +22,8 @@ export default defineConfig({
   name: "tmdbts",
   globalName: "TMDBTS",
   external: ["axios"],
-  minify: process.env.NODE_ENV === "production",
+  minify: true,
+  // minify: process.env.NODE_ENV === "production",
   target: "es2020",
   platform: "neutral",
   onSuccess() {
