@@ -38,7 +38,8 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "prepublishOnly": "pnpm run build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "uml": "tsuml2 --glob \"{./src/**/[!__tests__]*/!(*.test|*.d).ts,./src/!(__tests__|types)/**/!(*.test|*.d).ts,./src/client.ts}\" --outFile ./docs/architecture.svg --memberAssociations --exportedTypesOnly --nomnoml \"#arrowSize: 1.5\" \"#.interface: fill=#e6f7ff\" \"#direction: right\""
   },
   "devDependencies": {
     "@arethetypeswrong/core": "^0.18.1",

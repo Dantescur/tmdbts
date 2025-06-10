@@ -1,0 +1,500 @@
+<svg version="1.1" baseProfile="full" width="1364.0" height="2106.0" viewBox="0 0 1364 2106" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+#arrowSize: 1.5
+#.interface: fill=#e6f7ff
+#direction: right
+[Tmdbts|-http: HttpClient;+account: AccountApi;+auth: AuthApi;+certifications: CertsApi;+changes: ChangesApi;+collection: CollectionsApi;+company: CompaniesApi;+credit: CreditsApi;+discover: DiscoverApi|+getClientInfo(): { baseUrl: string; headers: Record&lt;string, string&gt;; apiKeyMasked: string; }]
+[Tmdbts]  -  [HttpClient]
+[Tmdbts]  -  [AccountApi]
+[Tmdbts]  -  [AuthApi]
+[Tmdbts]  -  [CertsApi]
+[Tmdbts]  -  [ChangesApi]
+[Tmdbts]  -  [CollectionsApi]
+[Tmdbts]  -  [CompaniesApi]
+[Tmdbts]  -  [CreditsApi]
+[Tmdbts]  -  [DiscoverApi]
+[AccountApi|-http: HttpClient|-buildQueryParams(): CommonParams;+getDetails(): Promise&lt;DetailsResponse&gt;;+markAsFavorite(): Promise&lt;FavoriteResponse&gt;;+getFavoriteMovies(): Promise&lt;FavoritesResponse&gt;;+getFavoriteTVShows(): Promise&lt;FavoritesResponse&gt;;+addToWatchlist(): Promise&lt;WatchlistResponse&gt;;+getWatchlistMovies(): Promise&lt;WatchlistMoviesResponse&gt;;+getWatchlistTv(): Promise&lt;WatchlistTvResponse&gt;;+getLists(): Promise&lt;ListsResponse&gt;;+getRatedMovies(): Promise&lt;RatedMoviesResponse&gt;;+getRatedTVShows(): Promise&lt;RatedTvResponse&gt;;+getRatedTVEpisodes(): Promise&lt;RatedTvEpisodesResponse&gt;]
+[AccountApi]  -  [HttpClient]
+[AuthApi|-http: HttpClient|+createRequestToken(): Promise&lt;RequestTokenResponse&gt;;+getAuthenticationUrl(): string;+createSession(): Promise&lt;SessionResponse&gt;;+createGuestSession(): Promise&lt;GuestSessionResponse&gt;;+validateKey(): Promise&lt;ValidateKeyResponse&gt;;+createSessionFromV4Token(): Promise&lt;SessionResponse&gt;;+validateWithLogin(): Promise&lt;RequestTokenResponse&gt;;+deleteSession(): Promise&lt;DeleteSessionResponse&gt;]
+[AuthApi]  -  [HttpClient]
+[CertsApi|-http: HttpClient|+getMovieCertifications(): Promise&lt;MovieCertsResponse&gt;;+getTvCertifications(): Promise&lt;TvCertsResponse&gt;]
+[CertsApi]  -  [HttpClient]
+[ChangesApi|-http: HttpClient|+getChangedMovieIds(): Promise&lt;ChangedResponse&gt;;+getChangedTvShowIds(): Promise&lt;ChangedResponse&gt;;+getChangedPersonIds(): Promise&lt;ChangedResponse&gt;]
+[ChangesApi]  -  [HttpClient]
+[CollectionsApi|-http: HttpClient|+getDetails(): Promise&lt;CollectionDetailsResponse&gt;;+getImages(): Promise&lt;CollectionImagesResponse&gt;;+getTranslations(): Promise&lt;CollectionTranslationResponse&gt;]
+[CollectionsApi]  -  [HttpClient]
+[CompaniesApi|-http: HttpClient|+getDetails(): Promise&lt;CompanyDetailsResponse&gt;;+getAlternativeNames(): Promise&lt;CompanyAlternativeNamesResponse&gt;;+getLogo(): Promise&lt;CompanyLogoResponse&gt;]
+[CompaniesApi]  -  [HttpClient]
+[ConfigApi|-http: HttpClient|+getDetails(): Promise&lt;ConfigDetailsResponse&gt;;+getIsoCountries(): Promise&lt;ConfigCountriesResponse&gt;;+getJobs(): Promise&lt;ConfigJobsResponse&gt;;+getLanguages(): Promise&lt;ConfigLanguagesResponse&gt;;+getTimezones(): Promise&lt;ConfigTimezoneResponse&gt;]
+[ConfigApi]  -  [HttpClient]
+[CreditsApi|-http: HttpClient|+get(): Promise&lt;CreditsResponse&gt;]
+[CreditsApi]  -  [HttpClient]
+[DiscoverApi|-http: HttpClient|+findMovie(): Promise&lt;FindMovieResponse&gt;;+findTv(): Promise&lt;FindTvResponse&gt;;+findById(): Promise&lt;FindByIdResponse&gt;]
+[DiscoverApi]  -  [HttpClient]
+[GenresApi|-http: HttpClient|+listMovies(): Promise&lt;GenreResponse&gt;;+listTvs(): Promise&lt;GenreResponse&gt;]
+[GenresApi]  -  [HttpClient]
+[GuestApi|-http: HttpClient|+ratedMovies(): Promise&lt;GuestSessionResponse&gt;;+ratedTvs(): Promise&lt;GuestTvResponse&gt;;+ratedTvEposides(): Promise&lt;RatedTvEpisodesResponse&gt;]
+[GuestApi]  -  [HttpClient]
+[TmdbError|+original?: unknown|]
+[HttpClient|-client: AxiosInstance;+baseUrl: string;+headers: Record&lt;string, string&gt;;+apiKey: string|+get(): Promise&lt;T&gt;;+post(): Promise&lt;T&gt;;+delete(): Promise&lt;T&gt;]
+[&lt;interface&gt;TmdbConfig|+apiKey: string;+baseUrl?: string;+headers?: Record&lt;string, string&gt;;+defaultParams?: Record&lt;string, unknown&gt;|]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="2106.0" width="1364.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 48)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<path d="M214.7 643.0 L382 -40 L697 -40 L697 -40 L1012 -40 L1012 -40 L1156.7277017461067 930.5 L1156.7 930.5 " fill="none"></path>
+<path d="M223.9 643.0 L382 137 L438.5 137 L438.5 137.0 " fill="none"></path>
+<path d="M257.5 643.0 L382 419 L448 419 L448.0 419.0 " fill="none"></path>
+<path d="M318.0 671.1 L382 620 L459 620 L459.0 620.0 " fill="none"></path>
+<path d="M318.0 780.5 L382 780.5 L463.5 780.5 L463.5 780.5 " fill="none"></path>
+<path d="M318.0 895.7 L382 949.5 L447 949.5 L447.0 949.5 " fill="none"></path>
+<path d="M262.8 918.0 L382 1118.5 L402 1118.5 L402.0 1118.5 " fill="none"></path>
+<path d="M221.0 918.0 L382 1472 L550.5 1472 L550.5 1472.0 " fill="none"></path>
+<path d="M213.7 918.0 L382 1624.5 L512.5 1624.5 L512.5 1624.5 " fill="none"></path>
+<path d="M955.5 137.0 L1012 137 L1154.0657223796034 930.5 L1154.1 930.5 " fill="none"></path>
+<path d="M946.0 419.0 L1012 419 L1146.5828476269776 930.5 L1146.6 930.5 " fill="none"></path>
+<path d="M935.0 620.0 L1012 620 L1134.8010012515645 930.5 L1134.8 930.5 " fill="none"></path>
+<path d="M930.5 780.5 L1012 780.5 L1111.163179916318 930.5 L1111.2 930.5 " fill="none"></path>
+<path d="M947.0 949.5 L1012 949.5 L1032 958.3607594936709 L1032.0 958.4 " fill="none"></path>
+<path d="M992.0 1118.5 L1012 1118.5 L1032 1105.9683544303798 L1032.0 1106.0 " fill="none"></path>
+<path d="M930.0 1303.5 L1012 1303.5 L1120.4859154929577 1108.5 L1120.5 1108.5 " fill="none"></path>
+<path d="M843.5 1472.0 L1012 1472 L1138.9237569060774 1108.5 L1138.9 1108.5 " fill="none"></path>
+<path d="M881.5 1624.5 L1012 1624.5 L1146.7570247933884 1108.5 L1146.8 1108.5 " fill="none"></path>
+<path d="M866.5 1785.0 L1012 1785 L1151.630306988896 1108.5 L1151.6 1108.5 " fill="none"></path>
+<path d="M939.0 1945.5 L1012 1945.5 L1154.8142548596113 1108.5 L1154.8 1108.5 " fill="none"></path>
+<g data-name="Tmdbts">
+<g fill="#eee8d5" stroke="#33322E" data-name="Tmdbts">
+<rect x="44.0" y="643.0" height="275.0" width="274.0" data-name="Tmdbts"></rect>
+<path d="M44.0 675.0 L318.0 675.0" fill="none" data-name="Tmdbts"></path>
+<path d="M44.0 837.0 L318.0 837.0" fill="none" data-name="Tmdbts"></path>
+</g>
+<g transform="translate(44, 643)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Tmdbts" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Tmdbts" data-compartment="0">
+<a id="../src/client.ts.Tmdbts" xlink:href="../src/client.ts"><text x="129.0" y="14.1" stroke="none" text-anchor="middle" data-name="Tmdbts" data-compartment="0">Tmdbts</text></a>
+
+</g>
+</g>
+<g transform="translate(44, 675)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tmdbts" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tmdbts" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Tmdbts" data-compartment="1">-http: HttpClient</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Tmdbts" data-compartment="1">+account: AccountApi</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Tmdbts" data-compartment="1">+auth: AuthApi</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Tmdbts" data-compartment="1">+certifications: CertsApi</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Tmdbts" data-compartment="1">+changes: ChangesApi</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Tmdbts" data-compartment="1">+collection: CollectionsApi</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Tmdbts" data-compartment="1">+company: CompaniesApi</text>
+<text x="0.0" y="127.5" stroke="none" data-name="Tmdbts" data-compartment="1">+credit: CreditsApi</text>
+<text x="0.0" y="143.7" stroke="none" data-name="Tmdbts" data-compartment="1">+discover: DiscoverApi</text>
+
+</g>
+</g>
+<g transform="translate(44, 837)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tmdbts" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tmdbts" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Tmdbts" data-compartment="2">+getClientInfo(): { baseUrl: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Tmdbts" data-compartment="2">headers: Record&lt;string, string&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Tmdbts" data-compartment="2">apiKeyMasked: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Tmdbts" data-compartment="2">}</text>
+
+</g>
+</g>
+</g>
+<g data-name="HttpClient">
+<g fill="#eee8d5" stroke="#33322E" data-name="HttpClient">
+<rect x="1032.0" y="930.5" height="178.0" width="276.0" data-name="HttpClient"></rect>
+<path d="M1032.0 962.5 L1308.0 962.5" fill="none" data-name="HttpClient"></path>
+<path d="M1032.0 1043.5 L1308.0 1043.5" fill="none" data-name="HttpClient"></path>
+</g>
+<g transform="translate(1032, 930.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="HttpClient" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpClient" data-compartment="0">
+<a id="../src/utils/http.ts.HttpClient" xlink:href="../src/utils/http.ts"><text x="130.0" y="14.1" stroke="none" text-anchor="middle" data-name="HttpClient" data-compartment="0">HttpClient</text></a>
+
+</g>
+</g>
+<g transform="translate(1032, 962.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HttpClient" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="HttpClient" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="HttpClient" data-compartment="1">-client: AxiosInstance</text>
+<text x="0.0" y="30.3" stroke="none" data-name="HttpClient" data-compartment="1">+baseUrl: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="HttpClient" data-compartment="1">+headers: Record&lt;string, string&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="HttpClient" data-compartment="1">+apiKey: string</text>
+
+</g>
+</g>
+<g transform="translate(1032, 1043.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HttpClient" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="HttpClient" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="HttpClient" data-compartment="2">+get(): Promise&lt;T&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="HttpClient" data-compartment="2">+post(): Promise&lt;T&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="HttpClient" data-compartment="2">+delete(): Promise&lt;T&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="AccountApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="AccountApi">
+<rect x="438.5" y="0.0" height="274.0" width="517.0" data-name="AccountApi"></rect>
+<path d="M438.5 32.0 L955.5 32.0" fill="none" data-name="AccountApi"></path>
+<path d="M438.5 64.0 L955.5 64.0" fill="none" data-name="AccountApi"></path>
+</g>
+<g transform="translate(438.5, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AccountApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AccountApi" data-compartment="0">
+<a id="../src/api/account.ts.AccountApi" xlink:href="../src/api/account.ts"><text x="250.5" y="14.1" stroke="none" text-anchor="middle" data-name="AccountApi" data-compartment="0">AccountApi</text></a>
+
+</g>
+</g>
+<g transform="translate(438.5, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AccountApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AccountApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AccountApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(438.5, 64)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AccountApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AccountApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AccountApi" data-compartment="2">-buildQueryParams(): CommonParams</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AccountApi" data-compartment="2">+getDetails(): Promise&lt;DetailsResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AccountApi" data-compartment="2">+markAsFavorite(): Promise&lt;FavoriteResponse&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AccountApi" data-compartment="2">+getFavoriteMovies(): Promise&lt;FavoritesResponse&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="AccountApi" data-compartment="2">+getFavoriteTVShows(): Promise&lt;FavoritesResponse&gt;</text>
+<text x="0.0" y="95.1" stroke="none" data-name="AccountApi" data-compartment="2">+addToWatchlist(): Promise&lt;WatchlistResponse&gt;</text>
+<text x="0.0" y="111.3" stroke="none" data-name="AccountApi" data-compartment="2">+getWatchlistMovies(): Promise&lt;WatchlistMoviesResponse&gt;</text>
+<text x="0.0" y="127.5" stroke="none" data-name="AccountApi" data-compartment="2">+getWatchlistTv(): Promise&lt;WatchlistTvResponse&gt;</text>
+<text x="0.0" y="143.7" stroke="none" data-name="AccountApi" data-compartment="2">+getLists(): Promise&lt;ListsResponse&gt;</text>
+<text x="0.0" y="159.9" stroke="none" data-name="AccountApi" data-compartment="2">+getRatedMovies(): Promise&lt;RatedMoviesResponse&gt;</text>
+<text x="0.0" y="176.1" stroke="none" data-name="AccountApi" data-compartment="2">+getRatedTVShows(): Promise&lt;RatedTvResponse&gt;</text>
+<text x="0.0" y="192.3" stroke="none" data-name="AccountApi" data-compartment="2">+getRatedTVEpisodes(): Promise&lt;RatedTvEpisodesResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="AuthApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="AuthApi">
+<rect x="448.0" y="314.0" height="210.0" width="498.0" data-name="AuthApi"></rect>
+<path d="M448.0 346.0 L946.0 346.0" fill="none" data-name="AuthApi"></path>
+<path d="M448.0 378.0 L946.0 378.0" fill="none" data-name="AuthApi"></path>
+</g>
+<g transform="translate(448, 314)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AuthApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AuthApi" data-compartment="0">
+<a id="../src/api/auth.ts.AuthApi" xlink:href="../src/api/auth.ts"><text x="241.0" y="14.1" stroke="none" text-anchor="middle" data-name="AuthApi" data-compartment="0">AuthApi</text></a>
+
+</g>
+</g>
+<g transform="translate(448, 346)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AuthApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AuthApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(448, 378)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AuthApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AuthApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="AuthApi" data-compartment="2">+createRequestToken(): Promise&lt;RequestTokenResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AuthApi" data-compartment="2">+getAuthenticationUrl(): string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AuthApi" data-compartment="2">+createSession(): Promise&lt;SessionResponse&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AuthApi" data-compartment="2">+createGuestSession(): Promise&lt;GuestSessionResponse&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="AuthApi" data-compartment="2">+validateKey(): Promise&lt;ValidateKeyResponse&gt;</text>
+<text x="0.0" y="95.1" stroke="none" data-name="AuthApi" data-compartment="2">+createSessionFromV4Token(): Promise&lt;SessionResponse&gt;</text>
+<text x="0.0" y="111.3" stroke="none" data-name="AuthApi" data-compartment="2">+validateWithLogin(): Promise&lt;RequestTokenResponse&gt;</text>
+<text x="0.0" y="127.5" stroke="none" data-name="AuthApi" data-compartment="2">+deleteSession(): Promise&lt;DeleteSessionResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CertsApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="CertsApi">
+<rect x="459.0" y="564.0" height="112.0" width="476.0" data-name="CertsApi"></rect>
+<path d="M459.0 596.0 L935.0 596.0" fill="none" data-name="CertsApi"></path>
+<path d="M459.0 628.0 L935.0 628.0" fill="none" data-name="CertsApi"></path>
+</g>
+<g transform="translate(459, 564)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CertsApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CertsApi" data-compartment="0">
+<a id="../src/api/certs.ts.CertsApi" xlink:href="../src/api/certs.ts"><text x="230.0" y="14.1" stroke="none" text-anchor="middle" data-name="CertsApi" data-compartment="0">CertsApi</text></a>
+
+</g>
+</g>
+<g transform="translate(459, 596)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CertsApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CertsApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CertsApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(459, 628)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CertsApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CertsApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CertsApi" data-compartment="2">+getMovieCertifications(): Promise&lt;MovieCertsResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CertsApi" data-compartment="2">+getTvCertifications(): Promise&lt;TvCertsResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ChangesApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="ChangesApi">
+<rect x="463.5" y="716.0" height="129.0" width="467.0" data-name="ChangesApi"></rect>
+<path d="M463.5 748.0 L930.5 748.0" fill="none" data-name="ChangesApi"></path>
+<path d="M463.5 780.0 L930.5 780.0" fill="none" data-name="ChangesApi"></path>
+</g>
+<g transform="translate(463.5, 716)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ChangesApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ChangesApi" data-compartment="0">
+<a id="../src/api/changes.ts.ChangesApi" xlink:href="../src/api/changes.ts"><text x="225.5" y="14.1" stroke="none" text-anchor="middle" data-name="ChangesApi" data-compartment="0">ChangesApi</text></a>
+
+</g>
+</g>
+<g transform="translate(463.5, 748)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ChangesApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ChangesApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ChangesApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(463.5, 780)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ChangesApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ChangesApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ChangesApi" data-compartment="2">+getChangedMovieIds(): Promise&lt;ChangedResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ChangesApi" data-compartment="2">+getChangedTvShowIds(): Promise&lt;ChangedResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ChangesApi" data-compartment="2">+getChangedPersonIds(): Promise&lt;ChangedResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CollectionsApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="CollectionsApi">
+<rect x="447.0" y="885.0" height="129.0" width="500.0" data-name="CollectionsApi"></rect>
+<path d="M447.0 917.0 L947.0 917.0" fill="none" data-name="CollectionsApi"></path>
+<path d="M447.0 949.0 L947.0 949.0" fill="none" data-name="CollectionsApi"></path>
+</g>
+<g transform="translate(447, 885)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CollectionsApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CollectionsApi" data-compartment="0">
+<a id="../src/api/collections.ts.CollectionsApi" xlink:href="../src/api/collections.ts"><text x="242.0" y="14.1" stroke="none" text-anchor="middle" data-name="CollectionsApi" data-compartment="0">CollectionsApi</text></a>
+
+</g>
+</g>
+<g transform="translate(447, 917)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CollectionsApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CollectionsApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CollectionsApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(447, 949)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CollectionsApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CollectionsApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CollectionsApi" data-compartment="2">+getDetails(): Promise&lt;CollectionDetailsResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CollectionsApi" data-compartment="2">+getImages(): Promise&lt;CollectionImagesResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CollectionsApi" data-compartment="2">+getTranslations(): Promise&lt;CollectionTranslationResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CompaniesApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="CompaniesApi">
+<rect x="402.0" y="1054.0" height="129.0" width="590.0" data-name="CompaniesApi"></rect>
+<path d="M402.0 1086.0 L992.0 1086.0" fill="none" data-name="CompaniesApi"></path>
+<path d="M402.0 1118.0 L992.0 1118.0" fill="none" data-name="CompaniesApi"></path>
+</g>
+<g transform="translate(402, 1054)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CompaniesApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CompaniesApi" data-compartment="0">
+<a id="../src/api/companies.ts.CompaniesApi" xlink:href="../src/api/companies.ts"><text x="287.0" y="14.1" stroke="none" text-anchor="middle" data-name="CompaniesApi" data-compartment="0">CompaniesApi</text></a>
+
+</g>
+</g>
+<g transform="translate(402, 1086)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CompaniesApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CompaniesApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CompaniesApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(402, 1118)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CompaniesApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CompaniesApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CompaniesApi" data-compartment="2">+getDetails(): Promise&lt;CompanyDetailsResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CompaniesApi" data-compartment="2">+getAlternativeNames(): Promise&lt;CompanyAlternativeNamesResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CompaniesApi" data-compartment="2">+getLogo(): Promise&lt;CompanyLogoResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="CreditsApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="CreditsApi">
+<rect x="550.5" y="1424.0" height="96.0" width="293.0" data-name="CreditsApi"></rect>
+<path d="M550.5 1456.0 L843.5 1456.0" fill="none" data-name="CreditsApi"></path>
+<path d="M550.5 1488.0 L843.5 1488.0" fill="none" data-name="CreditsApi"></path>
+</g>
+<g transform="translate(550.5, 1424)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CreditsApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CreditsApi" data-compartment="0">
+<a id="../src/api/credits.ts.CreditsApi" xlink:href="../src/api/credits.ts"><text x="138.5" y="14.1" stroke="none" text-anchor="middle" data-name="CreditsApi" data-compartment="0">CreditsApi</text></a>
+
+</g>
+</g>
+<g transform="translate(550.5, 1456)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreditsApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreditsApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CreditsApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(550.5, 1488)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CreditsApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CreditsApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="CreditsApi" data-compartment="2">+get(): Promise&lt;CreditsResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="DiscoverApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="DiscoverApi">
+<rect x="512.5" y="1560.0" height="129.0" width="369.0" data-name="DiscoverApi"></rect>
+<path d="M512.5 1592.0 L881.5 1592.0" fill="none" data-name="DiscoverApi"></path>
+<path d="M512.5 1624.0 L881.5 1624.0" fill="none" data-name="DiscoverApi"></path>
+</g>
+<g transform="translate(512.5, 1560)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DiscoverApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DiscoverApi" data-compartment="0">
+<a id="../src/api/discover.ts.DiscoverApi" xlink:href="../src/api/discover.ts"><text x="176.5" y="14.1" stroke="none" text-anchor="middle" data-name="DiscoverApi" data-compartment="0">DiscoverApi</text></a>
+
+</g>
+</g>
+<g transform="translate(512.5, 1592)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DiscoverApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="DiscoverApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="DiscoverApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(512.5, 1624)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DiscoverApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="DiscoverApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="DiscoverApi" data-compartment="2">+findMovie(): Promise&lt;FindMovieResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="DiscoverApi" data-compartment="2">+findTv(): Promise&lt;FindTvResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="DiscoverApi" data-compartment="2">+findById(): Promise&lt;FindByIdResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="ConfigApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="ConfigApi">
+<rect x="464.0" y="1223.0" height="161.0" width="466.0" data-name="ConfigApi"></rect>
+<path d="M464.0 1255.0 L930.0 1255.0" fill="none" data-name="ConfigApi"></path>
+<path d="M464.0 1287.0 L930.0 1287.0" fill="none" data-name="ConfigApi"></path>
+</g>
+<g transform="translate(464, 1223)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConfigApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ConfigApi" data-compartment="0">
+<a id="../src/api/config.ts.ConfigApi" xlink:href="../src/api/config.ts"><text x="225.0" y="14.1" stroke="none" text-anchor="middle" data-name="ConfigApi" data-compartment="0">ConfigApi</text></a>
+
+</g>
+</g>
+<g transform="translate(464, 1255)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConfigApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConfigApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ConfigApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(464, 1287)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConfigApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConfigApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ConfigApi" data-compartment="2">+getDetails(): Promise&lt;ConfigDetailsResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ConfigApi" data-compartment="2">+getIsoCountries(): Promise&lt;ConfigCountriesResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ConfigApi" data-compartment="2">+getJobs(): Promise&lt;ConfigJobsResponse&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="ConfigApi" data-compartment="2">+getLanguages(): Promise&lt;ConfigLanguagesResponse&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="ConfigApi" data-compartment="2">+getTimezones(): Promise&lt;ConfigTimezoneResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="GenresApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="GenresApi">
+<rect x="527.5" y="1729.0" height="112.0" width="339.0" data-name="GenresApi"></rect>
+<path d="M527.5 1761.0 L866.5 1761.0" fill="none" data-name="GenresApi"></path>
+<path d="M527.5 1793.0 L866.5 1793.0" fill="none" data-name="GenresApi"></path>
+</g>
+<g transform="translate(527.5, 1729)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="GenresApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="GenresApi" data-compartment="0">
+<a id="../src/api/genres.ts.GenresApi" xlink:href="../src/api/genres.ts"><text x="161.5" y="14.1" stroke="none" text-anchor="middle" data-name="GenresApi" data-compartment="0">GenresApi</text></a>
+
+</g>
+</g>
+<g transform="translate(527.5, 1761)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="GenresApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="GenresApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="GenresApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(527.5, 1793)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="GenresApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="GenresApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="GenresApi" data-compartment="2">+listMovies(): Promise&lt;GenreResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="GenresApi" data-compartment="2">+listTvs(): Promise&lt;GenreResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="GuestApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="GuestApi">
+<rect x="455.0" y="1881.0" height="129.0" width="484.0" data-name="GuestApi"></rect>
+<path d="M455.0 1913.0 L939.0 1913.0" fill="none" data-name="GuestApi"></path>
+<path d="M455.0 1945.0 L939.0 1945.0" fill="none" data-name="GuestApi"></path>
+</g>
+<g transform="translate(455, 1881)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="GuestApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="GuestApi" data-compartment="0">
+<a id="../src/api/guest.ts.GuestApi" xlink:href="../src/api/guest.ts"><text x="234.0" y="14.1" stroke="none" text-anchor="middle" data-name="GuestApi" data-compartment="0">GuestApi</text></a>
+
+</g>
+</g>
+<g transform="translate(455, 1913)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="GuestApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="GuestApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="GuestApi" data-compartment="1">-http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(455, 1945)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="GuestApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="GuestApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="GuestApi" data-compartment="2">+ratedMovies(): Promise&lt;GuestSessionResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="GuestApi" data-compartment="2">+ratedTvs(): Promise&lt;GuestTvResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="GuestApi" data-compartment="2">+ratedTvEposides(): Promise&lt;RatedTvEpisodesResponse&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="TmdbError">
+<g fill="#eee8d5" stroke="#33322E" data-name="TmdbError">
+<rect x="93.5" y="958.0" height="72.0" width="175.0" data-name="TmdbError"></rect>
+<path d="M93.5 990.0 L268.5 990.0" fill="none" data-name="TmdbError"></path>
+<path d="M93.5 1022.0 L268.5 1022.0" fill="none" data-name="TmdbError"></path>
+</g>
+<g transform="translate(93.5, 958)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="TmdbError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TmdbError" data-compartment="0">
+<a id="../src/utils/errors.ts.TmdbError" xlink:href="../src/utils/errors.ts"><text x="79.5" y="14.1" stroke="none" text-anchor="middle" data-name="TmdbError" data-compartment="0">TmdbError</text></a>
+
+</g>
+</g>
+<g transform="translate(93.5, 990)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TmdbError" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TmdbError" data-compartment="1">+original?: unknown</text>
+
+</g>
+</g>
+<g transform="translate(93.5, 1022)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TmdbError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TmdbConfig">
+<g fill="#e6f7ff" stroke="#33322E" data-name="TmdbConfig">
+<rect x="0.0" y="1070.0" height="121.0" width="362.0" data-name="TmdbConfig"></rect>
+<path d="M0.0 1102.0 L362.0 1102.0" fill="none" data-name="TmdbConfig"></path>
+<path d="M0.0 1183.0 L362.0 1183.0" fill="none" data-name="TmdbConfig"></path>
+</g>
+<g transform="translate(0, 1070)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbConfig" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TmdbConfig" data-compartment="0">
+<a id="../src/utils/http.ts.TmdbConfig" xlink:href="../src/utils/http.ts"><text x="173.0" y="14.1" stroke="none" text-anchor="middle" data-name="TmdbConfig" data-compartment="0">TmdbConfig</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 1102)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbConfig" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TmdbConfig" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TmdbConfig" data-compartment="1">+apiKey: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TmdbConfig" data-compartment="1">+baseUrl?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TmdbConfig" data-compartment="1">+headers?: Record&lt;string, string&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TmdbConfig" data-compartment="1">+defaultParams?: Record&lt;string, unknown&gt;</text>
+
+</g>
+</g>
+<g transform="translate(0, 1183)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbConfig" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TmdbConfig" data-compartment="2">
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
