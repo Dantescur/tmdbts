@@ -27,7 +27,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsdown --from-vite vitest",
-    "release": "semantic-release --dry-run",
+    "release": "semantic-release",
     "commit": "cz",
     "gen:types": "openapi-typescript ./api.specs.json -o ./src/types/schema.ts",
     "lint:package": "publint",
