@@ -2,6 +2,7 @@
   "name": "typemdb",
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://github.com/dantescur/typemdb",
   "repository": {
     "url": "https://github.com/dantescur/typemdb"
   },
@@ -77,5 +78,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "provenance": true
   }
 }
