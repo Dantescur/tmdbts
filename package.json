@@ -33,6 +33,7 @@
   "scripts": {
     "build": "tsdown --from-vite vitest",
     "release": "semantic-release",
+    "lint": "oxlint -c oxlintrc.json",
     "commit": "cz",
     "gen:types": "openapi-typescript ./api.specs.json -o ./src/types/schema.ts",
     "lint:package": "publint",
@@ -62,6 +63,7 @@
     "msw": "^2.9.0",
     "openapi-types": "^12.1.3",
     "openapi-typescript": "^7.8.0",
+    "oxlint": "^1.0.0",
     "publint": "^0.3.12",
     "rolldown-plugin-dts": "^0.13.8",
     "semantic-release": "^24.2.5",

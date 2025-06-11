@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import axios from "axios";
 import { HttpClient } from "../http";
-import { TmdbError } from "../errors";
+import { TMDBError } from "../errors";
 
 // Mocks
 vi.mock("axios");
@@ -23,8 +23,8 @@ describe("HttpClient error cases", () => {
   beforeEach(() => {
     mockedAxios.create = vi.fn(() => instanceMock as any);
     mockedAxios.isAxiosError = (
-      payload: unknown,
-    ): payload is import("axios").AxiosError => true;
+      _payload: unknown,
+    ): _payload is import("axios").AxiosError => true;
 
     http = new HttpClient({ apiKey: "test-key" });
   });
@@ -35,7 +35,7 @@ describe("HttpClient error cases", () => {
       response: { status: 404 },
     });
 
-    await expect(http.get("/fail", {})).rejects.toThrow(TmdbError);
+    await expect(http.get("/fail", {})).rejects.toThrow(TMDBError);
   });
 
   it("should throw TmdbError on post failure", async () => {
@@ -58,8 +58,8 @@ describe("HttpClient error cases", () => {
 
   it("should throw generic TmdbError if error is not AxiosError", async () => {
     mockedAxios.isAxiosError = (
-      payload: unknown,
-    ): payload is import("axios").AxiosError => false;
+      _payload: unknown,
+    ): _payload is import("axios").AxiosError => false;
 
     instanceMock.get.mockRejectedValueOnce(new Error("Unexpected failure"));
 
@@ -71,8 +71,8 @@ describe("HttpClient error cases", () => {
   it("should fallback to 'Unknown' when status is undefined in AxiosError", async () => {
     // 👇 asegúrate de que sí lo detecte como AxiosError
     mockedAxios.isAxiosError = (
-      payload: unknown,
-    ): payload is import("axios").AxiosError => true;
+      _payload: unknown,
+    ): _payload is import("axios").AxiosError => true;
 
     instanceMock.post.mockRejectedValueOnce({
       message: "Timeout",

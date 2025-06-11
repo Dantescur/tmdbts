@@ -1,27 +1,19 @@
 /*
   types/movie.ts
 */
-import { PaginatedResponse } from "./common";
+import {
+  PaginatedResponse,
+  ProductionCompany,
+  ProductionCountry,
+  SpokenLanguage,
+} from "./common";
 import { Genre } from "./genres";
-import { SpokenLanguage } from "./tv";
 
 export interface BelongsToCollection {
   id: number;
   name: string;
   poster_path: string;
   backdrop_path: string;
-}
-
-export interface ProductionCompany {
-  id: number;
-  logo_path: string;
-  name: string;
-  origin_country: string;
-}
-
-export interface ProductionCountry {
-  iso_3166_1: string;
-  name: string;
 }
 
 export interface Movie {

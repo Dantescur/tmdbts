@@ -1,20 +1,14 @@
 /*
   types/tv.ts
 */
+import { ProductionCompany, ProductionCountry, SpokenLanguage } from "./common";
 import { Genre } from "./genres";
-import { ProductionCompany, ProductionCountry } from "./movie";
 
 export interface Network {
   id: number;
   logo_path: string;
   name: string;
   origin_country: string;
-}
-
-export interface SpokenLanguage {
-  english_name: string;
-  iso_639_1: string;
-  name: string;
 }
 
 export interface Season {

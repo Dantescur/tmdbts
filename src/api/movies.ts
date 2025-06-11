@@ -1,3 +1,4 @@
 /*
   api/movies.ts
 */
+export {};

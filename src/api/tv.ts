@@ -1,3 +1,4 @@
 /*
   api/tv.ts
 */
+export {};
