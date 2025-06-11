@@ -18,4 +18,26 @@ describe("ChangesApi", () => {
     const response = await changesApi.getChangedMovieIds();
     expect(response).toEqual(example);
   });
+
+  it("should return latest changed tv ids", async () => {
+    const example = getOpenApiExample("/3/tv/changes", "get", "200");
+    server.use(
+      http.get("https://api.themoviedb.org/3/tv/changes", () => {
+        return HttpResponse.json(example);
+      }),
+    );
+    const response = await changesApi.getChangedTvShowIds();
+    expect(response).toEqual(example);
+  });
+
+  it("should return latest changed persons ids", async () => {
+    const example = getOpenApiExample("/3/person/changes", "get", "200");
+    server.use(
+      http.get("https://api.themoviedb.org/3/person/changes", () => {
+        return HttpResponse.json(example);
+      }),
+    );
+    const response = await changesApi.getChangedPersonIds();
+    expect(response).toEqual(example);
+  });
 });

@@ -76,7 +76,7 @@ export class ChangesApi {
    * ```
    */
   async getChangedTvShowIds(
-    params: ChangedDataParams,
+    params?: ChangedDataParams,
   ): Promise<ChangedResponse> {
     return this.http.get("/tv/changes", {
       params: params,
@@ -101,7 +101,7 @@ export class ChangesApi {
    * ```
    */
   async getChangedPersonIds(
-    params: ChangedDataParams,
+    params?: ChangedDataParams,
   ): Promise<ChangedResponse> {
     return this.http.get("/person/changes", {
       params: params,
