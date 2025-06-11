@@ -99,4 +99,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish to pkg.pr.new
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx pkg-pr-new publish
