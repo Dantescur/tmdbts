@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dantescur/tsmdb/compare/v1.0.0...v1.1.0) (2025-06-11)
+
+
+### Features
+
+* **name:** changed the name of the package ([674a698](https://github.com/dantescur/tsmdb/commit/674a698186fde52ee55a7d91e9b986fe6f7270de))
+
 # 1.0.0 (2025-06-10)
 
 
