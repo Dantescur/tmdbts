@@ -10,6 +10,7 @@ import {
   DiscoverApi,
   GenresApi,
   GuestApi,
+  KeywordsApi,
 } from "./api";
 import { HttpClient, TMDBConfig } from "./utils";
 
@@ -112,6 +113,8 @@ export class TMDB {
 
   public guest: GuestApi;
 
+  public keywords: KeywordsApi;
+
   /**
    * Creates a new TMDB client instance
    * @param config - Configuration options
@@ -128,6 +131,7 @@ export class TMDB {
     this.discover = new DiscoverApi(this.http);
     this.genres = new GenresApi(this.http);
     this.guest = new GuestApi(this.http);
+    this.keywords = new KeywordsApi(this.http);
   }
 
   public getClientInfo(): {

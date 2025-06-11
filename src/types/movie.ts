@@ -2,6 +2,7 @@
   types/movie.ts
 */
 import { PaginatedResponse } from "./common";
+import { Genre } from "./genres";
 import { SpokenLanguage } from "./tv";
 
 export interface BelongsToCollection {
@@ -9,11 +10,6 @@ export interface BelongsToCollection {
   name: string;
   poster_path: string;
   backdrop_path: string;
-}
-
-export interface Genre {
-  id: number;
-  name: string;
 }
 
 export interface ProductionCompany {
