@@ -11,7 +11,7 @@ export class GuestApi {
 
   async ratedMovies(
     guest_session_id: string,
-    params: GuestRatedParams,
+    params?: GuestRatedParams,
   ): Promise<GuestSessionResponse> {
     return this.http.get(`/guest_session/${guest_session_id}/rated/movies`, {
       params,
@@ -20,7 +20,7 @@ export class GuestApi {
 
   async ratedTvs(
     guest_session_id: string,
-    params: GuestRatedParams,
+    params?: GuestRatedParams,
   ): Promise<GuestTvResponse> {
     return this.http.get(`/guest_session/${guest_session_id}/rated/tv`, {
       params,
@@ -29,10 +29,13 @@ export class GuestApi {
 
   async ratedTvEposides(
     guest_session_id: string,
-    params: GuestRatedParams,
+    params?: GuestRatedParams,
   ): Promise<RatedTvEpisodesResponse> {
-    return this.http.get(`/guest_session/${guest_session_id}/rated/tv`, {
-      params,
-    });
+    return this.http.get(
+      `/guest_session/${guest_session_id}/rated/tv/episodes`,
+      {
+        params,
+      },
+    );
   }
 }

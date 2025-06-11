@@ -11,3 +11,4 @@ export * from "./companies";
 export * from "./credits";
 export * from "./discover";
 export * from "./config";
+export * from "./guest";

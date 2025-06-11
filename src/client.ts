@@ -8,6 +8,7 @@ import {
   CompaniesApi,
   CreditsApi,
   DiscoverApi,
+  GuestApi,
 } from "./api";
 import { HttpClient, TmdbConfig } from "./utils";
 
