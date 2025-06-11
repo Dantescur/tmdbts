@@ -2,9 +2,9 @@
   "name": "typemdb",
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://github.com/dantescur/typemdb",
+  "homepage": "https://github.com/Dantescur/typemdb",
   "repository": {
-    "url": "git+https://github.com/dantescur/typemdb.git",
+    "url": "https://github.com/Dantescur/typemdb",
     "type": "git"
   },
   "description": "A type-safe, intuitive TypeScript library for the TMDB API",
