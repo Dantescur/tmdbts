@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - beta
   pull_request:
     branches:
       - main
+      - beta
 
 jobs:
   test:
@@ -52,7 +54,7 @@ jobs:
   release:
     needs: test
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta')
     permissions:
       contents: write
       issues: write

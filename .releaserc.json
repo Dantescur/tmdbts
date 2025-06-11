@@ -1,9 +1,22 @@
 {
-  "branches": ["main"],
+  "branches": [
+    "main",
+    {
+      "name": "beta",
+      "prerelease": true
+    }
+  ],
   "plugins": [
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
-    "@semantic-release/npm",
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true,
+        "pkgRoot": ".",
+        "distTag": "beta"
+      }
+    ],
     "@semantic-release/github",
     [
       "@semantic-release/git",

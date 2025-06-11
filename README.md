@@ -1,6 +1,16 @@
 # TypeMDB: A TypeScript Client for The Movie Database (TMDb) API
 
 <p align="center">
+  <a href="https://pkg.pr.new/~/Dantescur/typemdb">
+    <img src="https://pkg.pr.new/badge/Dantescur/typemdb?style=flat&color=000&logoSize=auto" alt="pkg.pr.new badge">
+  </a>
+  <img src="https://img.shields.io/npm/v/typemdb?color=blue&label=version" alt="npm version">
+  <img src="https://img.shields.io/bundlephobia/min/typemdb" alt="minified size">
+  <img src="https://img.shields.io/github/actions/workflow/status/Dantescur/typemdb/release.yml?label=CI" alt="CI status">
+  <img src="https://img.shields.io/npm/l/typemdb" alt="license">
+</p>
+
+<p align="center">
   <img width="200" alt="TypeMDB logo" src="./logo.png">
   <br>
   <em>A type-safe themoviedb API client for Node.js and browsers</em>
