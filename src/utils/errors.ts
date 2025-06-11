@@ -6,12 +6,12 @@
  *
  * @example
  * ```ts
- * throw new TmdbError('API request failed', originalError);
+ * throw new TMDBError('API request failed', originalError);
  * ```
  */
-export class TmdbError extends Error {
+export class TMDBError extends Error {
   /**
-   * Creates a new TmdbError instance
+   * Creates a new TMDBError instance
    * @param message - Human-readable error message
    * @param original - Original error that caused this exception (if available)
    */

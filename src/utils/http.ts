@@ -2,12 +2,12 @@
   utils/http.ts
 */
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-import { TmdbError } from "./errors";
+import { TMDBError } from "./errors";
 
 /**
  * Configuration options for the TMDB HTTP client
  */
-export interface TmdbConfig {
+export interface TMDBConfig {
   /** TMDB API key (required) */
   apiKey: string;
   /** Base API URL (defaults to official TMDB API) */
@@ -48,7 +48,7 @@ export class HttpClient {
    * Creates a new HttpClient instance
    * @param config - Configuration for the TMDB client
    */
-  constructor(config: TmdbConfig) {
+  constructor(config: TMDBConfig) {
     this.apiKey = config.apiKey;
     this.baseUrl = config.baseUrl ?? "https://api.themoviedb.org/3";
     this.headers = {
@@ -74,7 +74,7 @@ export class HttpClient {
    * @param options.params - Query parameters
    * @param options.config - Additional Axios configuration
    * @returns Promise resolving to the response data
-   * @throws {TmdbError} When the request fails
+   * @throws {TMDBError} When the request fails
    *
    * @example
    * ```ts
@@ -101,12 +101,12 @@ export class HttpClient {
       return response.data;
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        throw new TmdbError(
+        throw new TMDBError(
           `TMDB API Error: ${err.response?.status ?? "Unknown"} - ${err.message}`,
           err,
         );
       }
-      throw new TmdbError("Unknown error occurred", err);
+      throw new TMDBError("Unknown error occurred", err);
     }
   }
 
@@ -119,7 +119,7 @@ export class HttpClient {
    * @param options.params - Query parameters
    * @param options.config - Additional Axios configuration
    * @returns Promise resolving to the response data
-   * @throws {TmdbError} When the request fails
+   * @throws {TMDBError} When the request fails
    */
   async post<T>(
     url: string,
@@ -141,12 +141,12 @@ export class HttpClient {
       return response.data;
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        throw new TmdbError(
+        throw new TMDBError(
           `TMDB API Error: ${err.response?.status ?? "Unknown"} - ${err.message}`,
           err,
         );
       }
-      throw new TmdbError("Unknown error occurred", err);
+      throw new TMDBError("Unknown error occurred", err);
     }
   }
 
@@ -159,7 +159,7 @@ export class HttpClient {
    * @param options.params - Query parameters
    * @param options.config - Additional Axios configuration
    * @returns Promise resolving to the response data
-   * @throws {TmdbError} When the request fails
+   * @throws {TMDBError} When the request fails
    */
   async delete<T>(
     url: string,
@@ -182,12 +182,12 @@ export class HttpClient {
       return response.data;
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        throw new TmdbError(
+        throw new TMDBError(
           `TMDB API Error: ${err.response?.status ?? "Unknown"} - ${err.message}`,
           err,
         );
       }
-      throw new TmdbError("Unknown error occurred", err);
+      throw new TMDBError("Unknown error occurred", err);
     }
   }
 }

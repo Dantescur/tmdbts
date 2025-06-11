@@ -1,9 +1,9 @@
 {
-  "name": "ts-mdb",
-  "version": "1.1.0",
+  "name": "typemdb",
+  "version": "1.0.0",
   "type": "module",
   "repository": {
-    "url": "https://github.com/dantescur/tsmdb"
+    "url": "https://github.com/dantescur/typemdb"
   },
   "description": "A type-safe, intuitive TypeScript library for the TMDB API",
   "main": "./dist/index.cjs",
@@ -20,7 +20,7 @@
     "dist"
   ],
   "keywords": [
-    "tmdb",
+    "themoviedb",
     "api",
     "typescript",
     "movies",
@@ -34,7 +34,6 @@
     "commit": "cz",
     "gen:types": "openapi-typescript ./api.specs.json -o ./src/types/schema.ts",
     "lint:package": "publint",
-    "docs": "typedoc --options typedoc.json",
     "dev": "tsdown --watch",
     "test": "vitest run",
     "test:watch": "vitest",

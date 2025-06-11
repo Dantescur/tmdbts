@@ -5,16 +5,18 @@
 #arrowSize: 1.5
 #.interface: fill=#e6f7ff
 #direction: right
-[Tsmdb|-http: HttpClient;+account: AccountApi;+auth: AuthApi;+certifications: CertsApi;+changes: ChangesApi;+collection: CollectionsApi;+company: CompaniesApi;+credit: CreditsApi;+discover: DiscoverApi|+getClientInfo(): { baseUrl: string; headers: Record&lt;string, string&gt;; apiKeyMasked: string; }]
-[Tsmdb]  -  [HttpClient]
-[Tsmdb]  -  [AccountApi]
-[Tsmdb]  -  [AuthApi]
-[Tsmdb]  -  [CertsApi]
-[Tsmdb]  -  [ChangesApi]
-[Tsmdb]  -  [CollectionsApi]
-[Tsmdb]  -  [CompaniesApi]
-[Tsmdb]  -  [CreditsApi]
-[Tsmdb]  -  [DiscoverApi]
+[TMDB|-http: HttpClient;+account: AccountApi;+auth: AuthApi;+certifications: CertsApi;+changes: ChangesApi;+collection: CollectionsApi;+company: CompaniesApi;+credit: CreditsApi;+discover: DiscoverApi;+genres: GenresApi;+guest: GuestApi|+getClientInfo(): { baseUrl: string; headers: Record&lt;string, string&gt;; apiKeyMasked: string; }]
+[TMDB]  -  [HttpClient]
+[TMDB]  -  [AccountApi]
+[TMDB]  -  [AuthApi]
+[TMDB]  -  [CertsApi]
+[TMDB]  -  [ChangesApi]
+[TMDB]  -  [CollectionsApi]
+[TMDB]  -  [CompaniesApi]
+[TMDB]  -  [CreditsApi]
+[TMDB]  -  [DiscoverApi]
+[TMDB]  -  [GenresApi]
+[TMDB]  -  [GuestApi]
 [AccountApi|-http: HttpClient|-buildQueryParams(): CommonParams;+getDetails(): Promise&lt;DetailsResponse&gt;;+markAsFavorite(): Promise&lt;FavoriteResponse&gt;;+getFavoriteMovies(): Promise&lt;FavoritesResponse&gt;;+getFavoriteTVShows(): Promise&lt;FavoritesResponse&gt;;+addToWatchlist(): Promise&lt;WatchlistResponse&gt;;+getWatchlistMovies(): Promise&lt;WatchlistMoviesResponse&gt;;+getWatchlistTv(): Promise&lt;WatchlistTvResponse&gt;;+getLists(): Promise&lt;ListsResponse&gt;;+getRatedMovies(): Promise&lt;RatedMoviesResponse&gt;;+getRatedTVShows(): Promise&lt;RatedTvResponse&gt;;+getRatedTVEpisodes(): Promise&lt;RatedTvEpisodesResponse&gt;]
 [AccountApi]  -  [HttpClient]
 [AuthApi|-http: HttpClient|+createRequestToken(): Promise&lt;RequestTokenResponse&gt;;+getAuthenticationUrl(): string;+createSession(): Promise&lt;SessionResponse&gt;;+createGuestSession(): Promise&lt;GuestSessionResponse&gt;;+validateKey(): Promise&lt;ValidateKeyResponse&gt;;+createSessionFromV4Token(): Promise&lt;SessionResponse&gt;;+validateWithLogin(): Promise&lt;RequestTokenResponse&gt;;+deleteSession(): Promise&lt;DeleteSessionResponse&gt;]
@@ -37,9 +39,9 @@
 [GenresApi]  -  [HttpClient]
 [GuestApi|-http: HttpClient|+ratedMovies(): Promise&lt;GuestSessionResponse&gt;;+ratedTvs(): Promise&lt;GuestTvResponse&gt;;+ratedTvEposides(): Promise&lt;RatedTvEpisodesResponse&gt;]
 [GuestApi]  -  [HttpClient]
-[TmdbError|+original?: unknown|]
+[TMDBError|+original?: unknown|]
 [HttpClient|-client: AxiosInstance;+baseUrl: string;+headers: Record&lt;string, string&gt;;+apiKey: string|+get(): Promise&lt;T&gt;;+post(): Promise&lt;T&gt;;+delete(): Promise&lt;T&gt;]
-[&lt;interface&gt;TmdbConfig|+apiKey: string;+baseUrl?: string;+headers?: Record&lt;string, string&gt;;+defaultParams?: Record&lt;string, unknown&gt;|]</desc>
+[&lt;interface&gt;TMDBConfig|+apiKey: string;+baseUrl?: string;+headers?: Record&lt;string, string&gt;;+defaultParams?: Record&lt;string, unknown&gt;|]</desc>
 <g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
 <g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
 <g stroke="transparent" fill="transparent">
@@ -47,75 +49,79 @@
 </g>
 <g transform="translate(8, 48)" fill="#33322E">
 <g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
-<path d="M214.7 643.0 L382 -40 L697 -40 L697 -40 L1012 -40 L1012 -40 L1156.7277017461067 930.5 L1156.7 930.5 " fill="none"></path>
-<path d="M223.9 643.0 L382 137 L438.5 137 L438.5 137.0 " fill="none"></path>
-<path d="M257.5 643.0 L382 419 L448 419 L448.0 419.0 " fill="none"></path>
-<path d="M318.0 671.1 L382 620 L459 620 L459.0 620.0 " fill="none"></path>
-<path d="M318.0 780.5 L382 780.5 L463.5 780.5 L463.5 780.5 " fill="none"></path>
-<path d="M318.0 895.7 L382 949.5 L447 949.5 L447.0 949.5 " fill="none"></path>
-<path d="M262.8 918.0 L382 1118.5 L402 1118.5 L402.0 1118.5 " fill="none"></path>
-<path d="M221.0 918.0 L382 1472 L550.5 1472 L550.5 1472.0 " fill="none"></path>
-<path d="M213.7 918.0 L382 1624.5 L512.5 1624.5 L512.5 1624.5 " fill="none"></path>
-<path d="M955.5 137.0 L1012 137 L1154.0657223796034 930.5 L1154.1 930.5 " fill="none"></path>
-<path d="M946.0 419.0 L1012 419 L1146.5828476269776 930.5 L1146.6 930.5 " fill="none"></path>
-<path d="M935.0 620.0 L1012 620 L1134.8010012515645 930.5 L1134.8 930.5 " fill="none"></path>
-<path d="M930.5 780.5 L1012 780.5 L1111.163179916318 930.5 L1111.2 930.5 " fill="none"></path>
-<path d="M947.0 949.5 L1012 949.5 L1032 958.3607594936709 L1032.0 958.4 " fill="none"></path>
-<path d="M992.0 1118.5 L1012 1118.5 L1032 1105.9683544303798 L1032.0 1106.0 " fill="none"></path>
-<path d="M930.0 1303.5 L1012 1303.5 L1120.4859154929577 1108.5 L1120.5 1108.5 " fill="none"></path>
-<path d="M843.5 1472.0 L1012 1472 L1138.9237569060774 1108.5 L1138.9 1108.5 " fill="none"></path>
-<path d="M881.5 1624.5 L1012 1624.5 L1146.7570247933884 1108.5 L1146.8 1108.5 " fill="none"></path>
-<path d="M866.5 1785.0 L1012 1785 L1151.630306988896 1108.5 L1151.6 1108.5 " fill="none"></path>
-<path d="M939.0 1945.5 L1012 1945.5 L1154.8142548596113 1108.5 L1154.8 1108.5 " fill="none"></path>
-<g data-name="Tsmdb">
-<g fill="#eee8d5" stroke="#33322E" data-name="Tsmdb">
-<rect x="44.0" y="643.0" height="275.0" width="274.0" data-name="Tsmdb"></rect>
-<path d="M44.0 675.0 L318.0 675.0" fill="none" data-name="Tsmdb"></path>
-<path d="M44.0 837.0 L318.0 837.0" fill="none" data-name="Tsmdb"></path>
+<path d="M212.2 796.0 L382 -40 L697 -40 L697 -40 L1012 -40 L1012 -40 L1154.2177328843995 762 L1154.2 762.0 " fill="none"></path>
+<path d="M219.0 796.0 L382 137 L438.5 137 L438.5 137.0 " fill="none"></path>
+<path d="M239.2 796.0 L382 419 L448 419 L448.0 419.0 " fill="none"></path>
+<path d="M274.6 796.0 L382 620 L459 620 L459.0 620.0 " fill="none"></path>
+<path d="M318.0 834.3 L382 780.5 L463.5 780.5 L463.5 780.5 " fill="none"></path>
+<path d="M318.0 949.5 L382 949.5 L447 949.5 L447.0 949.5 " fill="none"></path>
+<path d="M318.0 1064.7 L382 1118.5 L402 1118.5 L402.0 1118.5 " fill="none"></path>
+<path d="M240.0 1103.0 L382 1472 L550.5 1472 L550.5 1472.0 " fill="none"></path>
+<path d="M226.7 1103.0 L382 1624.5 L512.5 1624.5 L512.5 1624.5 " fill="none"></path>
+<path d="M217.9 1103.0 L382 1785 L527.5 1785 L527.5 1785.0 " fill="none"></path>
+<path d="M212.0 1103.0 L382 1945.5 L455 1945.5 L455.0 1945.5 " fill="none"></path>
+<path d="M955.5 137.0 L1012 137 L1150.3053221288515 762 L1150.3 762.0 " fill="none"></path>
+<path d="M946.0 419.0 L1012 419 L1137.4490740740741 762 L1137.4 762.0 " fill="none"></path>
+<path d="M935.0 620.0 L1012 620 L1109.125541125541 762 L1109.1 762.0 " fill="none"></path>
+<path d="M930.5 780.5 L1012 780.5 L1032 789.4240506329114 L1032.0 789.4 " fill="none"></path>
+<path d="M947.0 949.5 L1012 949.5 L1032 937.0316455696202 L1032.0 937.0 " fill="none"></path>
+<path d="M992.0 1118.5 L1012 1118.5 L1117.4317757009346 940 L1117.4 940.0 " fill="none"></path>
+<path d="M930.0 1303.5 L1012 1303.5 L1138.9237569060774 940 L1138.9 940.0 " fill="none"></path>
+<path d="M843.5 1472.0 L1012 1472 L1147.3558776167472 940 L1147.4 940.0 " fill="none"></path>
+<path d="M881.5 1624.5 L1012 1624.5 L1151.820297349709 940 L1151.8 940.0 " fill="none"></path>
+<path d="M866.5 1785.0 L1012 1785 L1154.9443254817986 940 L1154.9 940.0 " fill="none"></path>
+<path d="M939.0 1945.5 L1012 1945.5 L1157.1521242576518 940 L1157.2 940.0 " fill="none"></path>
+<g data-name="TMDB">
+<g fill="#eee8d5" stroke="#33322E" data-name="TMDB">
+<rect x="44.0" y="796.0" height="307.0" width="274.0" data-name="TMDB"></rect>
+<path d="M44.0 828.0 L318.0 828.0" fill="none" data-name="TMDB"></path>
+<path d="M44.0 1022.0 L318.0 1022.0" fill="none" data-name="TMDB"></path>
 </g>
-<g transform="translate(44, 643)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Tsmdb" data-compartment="0">
-<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Tsmdb" data-compartment="0">
-<a id="../src/client.ts.Tsmdb" xlink:href="../src/client.ts"><text x="129.0" y="14.1" stroke="none" text-anchor="middle" data-name="Tsmdb" data-compartment="0">Tsmdb</text></a>
+<g transform="translate(44, 796)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="TMDB" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TMDB" data-compartment="0">
+<a id="../src/client.ts.TMDB" xlink:href="../src/client.ts"><text x="129.0" y="14.1" stroke="none" text-anchor="middle" data-name="TMDB" data-compartment="0">TMDB</text></a>
 
 </g>
 </g>
-<g transform="translate(44, 675)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tsmdb" data-compartment="1">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tsmdb" data-compartment="1">
-<text x="0.0" y="14.1" stroke="none" data-name="Tsmdb" data-compartment="1">-http: HttpClient</text>
-<text x="0.0" y="30.3" stroke="none" data-name="Tsmdb" data-compartment="1">+account: AccountApi</text>
-<text x="0.0" y="46.5" stroke="none" data-name="Tsmdb" data-compartment="1">+auth: AuthApi</text>
-<text x="0.0" y="62.7" stroke="none" data-name="Tsmdb" data-compartment="1">+certifications: CertsApi</text>
-<text x="0.0" y="78.9" stroke="none" data-name="Tsmdb" data-compartment="1">+changes: ChangesApi</text>
-<text x="0.0" y="95.1" stroke="none" data-name="Tsmdb" data-compartment="1">+collection: CollectionsApi</text>
-<text x="0.0" y="111.3" stroke="none" data-name="Tsmdb" data-compartment="1">+company: CompaniesApi</text>
-<text x="0.0" y="127.5" stroke="none" data-name="Tsmdb" data-compartment="1">+credit: CreditsApi</text>
-<text x="0.0" y="143.7" stroke="none" data-name="Tsmdb" data-compartment="1">+discover: DiscoverApi</text>
+<g transform="translate(44, 828)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TMDB" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TMDB" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TMDB" data-compartment="1">-http: HttpClient</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TMDB" data-compartment="1">+account: AccountApi</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TMDB" data-compartment="1">+auth: AuthApi</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TMDB" data-compartment="1">+certifications: CertsApi</text>
+<text x="0.0" y="78.9" stroke="none" data-name="TMDB" data-compartment="1">+changes: ChangesApi</text>
+<text x="0.0" y="95.1" stroke="none" data-name="TMDB" data-compartment="1">+collection: CollectionsApi</text>
+<text x="0.0" y="111.3" stroke="none" data-name="TMDB" data-compartment="1">+company: CompaniesApi</text>
+<text x="0.0" y="127.5" stroke="none" data-name="TMDB" data-compartment="1">+credit: CreditsApi</text>
+<text x="0.0" y="143.7" stroke="none" data-name="TMDB" data-compartment="1">+discover: DiscoverApi</text>
+<text x="0.0" y="159.9" stroke="none" data-name="TMDB" data-compartment="1">+genres: GenresApi</text>
+<text x="0.0" y="176.1" stroke="none" data-name="TMDB" data-compartment="1">+guest: GuestApi</text>
 
 </g>
 </g>
-<g transform="translate(44, 837)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tsmdb" data-compartment="2">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tsmdb" data-compartment="2">
-<text x="0.0" y="14.1" stroke="none" data-name="Tsmdb" data-compartment="2">+getClientInfo(): { baseUrl: string</text>
-<text x="0.0" y="30.3" stroke="none" data-name="Tsmdb" data-compartment="2">headers: Record&lt;string, string&gt;</text>
-<text x="0.0" y="46.5" stroke="none" data-name="Tsmdb" data-compartment="2">apiKeyMasked: string</text>
-<text x="0.0" y="62.7" stroke="none" data-name="Tsmdb" data-compartment="2">}</text>
+<g transform="translate(44, 1022)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TMDB" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TMDB" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="TMDB" data-compartment="2">+getClientInfo(): { baseUrl: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TMDB" data-compartment="2">headers: Record&lt;string, string&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TMDB" data-compartment="2">apiKeyMasked: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TMDB" data-compartment="2">}</text>
 
 </g>
 </g>
 </g>
 <g data-name="HttpClient">
 <g fill="#eee8d5" stroke="#33322E" data-name="HttpClient">
-<rect x="1032.0" y="930.5" height="178.0" width="276.0" data-name="HttpClient"></rect>
-<path d="M1032.0 962.5 L1308.0 962.5" fill="none" data-name="HttpClient"></path>
-<path d="M1032.0 1043.5 L1308.0 1043.5" fill="none" data-name="HttpClient"></path>
+<rect x="1032.0" y="762.0" height="178.0" width="276.0" data-name="HttpClient"></rect>
+<path d="M1032.0 794.0 L1308.0 794.0" fill="none" data-name="HttpClient"></path>
+<path d="M1032.0 875.0 L1308.0 875.0" fill="none" data-name="HttpClient"></path>
 </g>
-<g transform="translate(1032, 930.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="HttpClient" data-compartment="0">
+<g transform="translate(1032, 762)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="HttpClient" data-compartment="0">
 <g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HttpClient" data-compartment="0">
 <a id="../src/utils/http.ts.HttpClient" xlink:href="../src/utils/http.ts"><text x="130.0" y="14.1" stroke="none" text-anchor="middle" data-name="HttpClient" data-compartment="0">HttpClient</text></a>
 
 </g>
 </g>
-<g transform="translate(1032, 962.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HttpClient" data-compartment="1">
+<g transform="translate(1032, 794)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HttpClient" data-compartment="1">
 <g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="HttpClient" data-compartment="1">
 <text x="0.0" y="14.1" stroke="none" data-name="HttpClient" data-compartment="1">-client: AxiosInstance</text>
 <text x="0.0" y="30.3" stroke="none" data-name="HttpClient" data-compartment="1">+baseUrl: string</text>
@@ -124,7 +130,7 @@
 
 </g>
 </g>
-<g transform="translate(1032, 1043.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HttpClient" data-compartment="2">
+<g transform="translate(1032, 875)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HttpClient" data-compartment="2">
 <g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="HttpClient" data-compartment="2">
 <text x="0.0" y="14.1" stroke="none" data-name="HttpClient" data-compartment="2">+get(): Promise&lt;T&gt;</text>
 <text x="0.0" y="30.3" stroke="none" data-name="HttpClient" data-compartment="2">+post(): Promise&lt;T&gt;</text>
@@ -360,35 +366,6 @@
 </g>
 </g>
 </g>
-<g data-name="ConfigApi">
-<g fill="#eee8d5" stroke="#33322E" data-name="ConfigApi">
-<rect x="464.0" y="1223.0" height="161.0" width="466.0" data-name="ConfigApi"></rect>
-<path d="M464.0 1255.0 L930.0 1255.0" fill="none" data-name="ConfigApi"></path>
-<path d="M464.0 1287.0 L930.0 1287.0" fill="none" data-name="ConfigApi"></path>
-</g>
-<g transform="translate(464, 1223)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConfigApi" data-compartment="0">
-<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ConfigApi" data-compartment="0">
-<a id="../src/api/config.ts.ConfigApi" xlink:href="../src/api/config.ts"><text x="225.0" y="14.1" stroke="none" text-anchor="middle" data-name="ConfigApi" data-compartment="0">ConfigApi</text></a>
-
-</g>
-</g>
-<g transform="translate(464, 1255)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConfigApi" data-compartment="1">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConfigApi" data-compartment="1">
-<text x="0.0" y="14.1" stroke="none" data-name="ConfigApi" data-compartment="1">-http: HttpClient</text>
-
-</g>
-</g>
-<g transform="translate(464, 1287)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConfigApi" data-compartment="2">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConfigApi" data-compartment="2">
-<text x="0.0" y="14.1" stroke="none" data-name="ConfigApi" data-compartment="2">+getDetails(): Promise&lt;ConfigDetailsResponse&gt;</text>
-<text x="0.0" y="30.3" stroke="none" data-name="ConfigApi" data-compartment="2">+getIsoCountries(): Promise&lt;ConfigCountriesResponse&gt;</text>
-<text x="0.0" y="46.5" stroke="none" data-name="ConfigApi" data-compartment="2">+getJobs(): Promise&lt;ConfigJobsResponse&gt;</text>
-<text x="0.0" y="62.7" stroke="none" data-name="ConfigApi" data-compartment="2">+getLanguages(): Promise&lt;ConfigLanguagesResponse&gt;</text>
-<text x="0.0" y="78.9" stroke="none" data-name="ConfigApi" data-compartment="2">+getTimezones(): Promise&lt;ConfigTimezoneResponse&gt;</text>
-
-</g>
-</g>
-</g>
 <g data-name="GenresApi">
 <g fill="#eee8d5" stroke="#33322E" data-name="GenresApi">
 <rect x="527.5" y="1729.0" height="112.0" width="339.0" data-name="GenresApi"></rect>
@@ -442,53 +419,82 @@
 </g>
 </g>
 </g>
-<g data-name="TmdbError">
-<g fill="#eee8d5" stroke="#33322E" data-name="TmdbError">
-<rect x="93.5" y="958.0" height="72.0" width="175.0" data-name="TmdbError"></rect>
-<path d="M93.5 990.0 L268.5 990.0" fill="none" data-name="TmdbError"></path>
-<path d="M93.5 1022.0 L268.5 1022.0" fill="none" data-name="TmdbError"></path>
+<g data-name="ConfigApi">
+<g fill="#eee8d5" stroke="#33322E" data-name="ConfigApi">
+<rect x="464.0" y="1223.0" height="161.0" width="466.0" data-name="ConfigApi"></rect>
+<path d="M464.0 1255.0 L930.0 1255.0" fill="none" data-name="ConfigApi"></path>
+<path d="M464.0 1287.0 L930.0 1287.0" fill="none" data-name="ConfigApi"></path>
 </g>
-<g transform="translate(93.5, 958)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="TmdbError" data-compartment="0">
-<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TmdbError" data-compartment="0">
-<a id="../src/utils/errors.ts.TmdbError" xlink:href="../src/utils/errors.ts"><text x="79.5" y="14.1" stroke="none" text-anchor="middle" data-name="TmdbError" data-compartment="0">TmdbError</text></a>
+<g transform="translate(464, 1223)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ConfigApi" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ConfigApi" data-compartment="0">
+<a id="../src/api/config.ts.ConfigApi" xlink:href="../src/api/config.ts"><text x="225.0" y="14.1" stroke="none" text-anchor="middle" data-name="ConfigApi" data-compartment="0">ConfigApi</text></a>
 
 </g>
 </g>
-<g transform="translate(93.5, 990)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbError" data-compartment="1">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TmdbError" data-compartment="1">
-<text x="0.0" y="14.1" stroke="none" data-name="TmdbError" data-compartment="1">+original?: unknown</text>
+<g transform="translate(464, 1255)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConfigApi" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConfigApi" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ConfigApi" data-compartment="1">-http: HttpClient</text>
 
 </g>
 </g>
-<g transform="translate(93.5, 1022)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbError" data-compartment="2">
-<g transform="translate(8, 8)" fill="#33322E" data-name="TmdbError" data-compartment="2">
+<g transform="translate(464, 1287)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ConfigApi" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ConfigApi" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="ConfigApi" data-compartment="2">+getDetails(): Promise&lt;ConfigDetailsResponse&gt;</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ConfigApi" data-compartment="2">+getIsoCountries(): Promise&lt;ConfigCountriesResponse&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ConfigApi" data-compartment="2">+getJobs(): Promise&lt;ConfigJobsResponse&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="ConfigApi" data-compartment="2">+getLanguages(): Promise&lt;ConfigLanguagesResponse&gt;</text>
+<text x="0.0" y="78.9" stroke="none" data-name="ConfigApi" data-compartment="2">+getTimezones(): Promise&lt;ConfigTimezoneResponse&gt;</text>
 
 </g>
 </g>
 </g>
-<g data-name="TmdbConfig">
-<g fill="#e6f7ff" stroke="#33322E" data-name="TmdbConfig">
-<rect x="0.0" y="1070.0" height="121.0" width="362.0" data-name="TmdbConfig"></rect>
-<path d="M0.0 1102.0 L362.0 1102.0" fill="none" data-name="TmdbConfig"></path>
-<path d="M0.0 1183.0 L362.0 1183.0" fill="none" data-name="TmdbConfig"></path>
+<g data-name="TMDBError">
+<g fill="#eee8d5" stroke="#33322E" data-name="TMDBError">
+<rect x="93.5" y="1143.0" height="72.0" width="175.0" data-name="TMDBError"></rect>
+<path d="M93.5 1175.0 L268.5 1175.0" fill="none" data-name="TMDBError"></path>
+<path d="M93.5 1207.0 L268.5 1207.0" fill="none" data-name="TMDBError"></path>
 </g>
-<g transform="translate(0, 1070)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbConfig" data-compartment="0">
-<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TmdbConfig" data-compartment="0">
-<a id="../src/utils/http.ts.TmdbConfig" xlink:href="../src/utils/http.ts"><text x="173.0" y="14.1" stroke="none" text-anchor="middle" data-name="TmdbConfig" data-compartment="0">TmdbConfig</text></a>
+<g transform="translate(93.5, 1143)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="TMDBError" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TMDBError" data-compartment="0">
+<a id="../src/utils/errors.ts.TMDBError" xlink:href="../src/utils/errors.ts"><text x="79.5" y="14.1" stroke="none" text-anchor="middle" data-name="TMDBError" data-compartment="0">TMDBError</text></a>
 
 </g>
 </g>
-<g transform="translate(0, 1102)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbConfig" data-compartment="1">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TmdbConfig" data-compartment="1">
-<text x="0.0" y="14.1" stroke="none" data-name="TmdbConfig" data-compartment="1">+apiKey: string</text>
-<text x="0.0" y="30.3" stroke="none" data-name="TmdbConfig" data-compartment="1">+baseUrl?: string</text>
-<text x="0.0" y="46.5" stroke="none" data-name="TmdbConfig" data-compartment="1">+headers?: Record&lt;string, string&gt;</text>
-<text x="0.0" y="62.7" stroke="none" data-name="TmdbConfig" data-compartment="1">+defaultParams?: Record&lt;string, unknown&gt;</text>
+<g transform="translate(93.5, 1175)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TMDBError" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TMDBError" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TMDBError" data-compartment="1">+original?: unknown</text>
 
 </g>
 </g>
-<g transform="translate(0, 1183)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TmdbConfig" data-compartment="2">
-<g transform="translate(8, 8)" fill="#33322E" data-name="TmdbConfig" data-compartment="2">
+<g transform="translate(93.5, 1207)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TMDBError" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TMDBError" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TMDBConfig">
+<g fill="#e6f7ff" stroke="#33322E" data-name="TMDBConfig">
+<rect x="0.0" y="1255.0" height="121.0" width="362.0" data-name="TMDBConfig"></rect>
+<path d="M0.0 1287.0 L362.0 1287.0" fill="none" data-name="TMDBConfig"></path>
+<path d="M0.0 1368.0 L362.0 1368.0" fill="none" data-name="TMDBConfig"></path>
+</g>
+<g transform="translate(0, 1255)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TMDBConfig" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TMDBConfig" data-compartment="0">
+<a id="../src/utils/http.ts.TMDBConfig" xlink:href="../src/utils/http.ts"><text x="173.0" y="14.1" stroke="none" text-anchor="middle" data-name="TMDBConfig" data-compartment="0">TMDBConfig</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 1287)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TMDBConfig" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TMDBConfig" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TMDBConfig" data-compartment="1">+apiKey: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TMDBConfig" data-compartment="1">+baseUrl?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TMDBConfig" data-compartment="1">+headers?: Record&lt;string, string&gt;</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TMDBConfig" data-compartment="1">+defaultParams?: Record&lt;string, unknown&gt;</text>
+
+</g>
+</g>
+<g transform="translate(0, 1368)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TMDBConfig" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TMDBConfig" data-compartment="2">
 
 </g>
 </g>

@@ -11,10 +11,10 @@ import {
   GenresApi,
   GuestApi,
 } from "./api";
-import { HttpClient, TmdbConfig } from "./utils";
+import { HttpClient, TMDBConfig } from "./utils";
 
 /**
- * The main TMDB client class providing access to all API endpoints
+ * The main TypeMDB client class providing access to all API endpoints
  *
  * @remarks
  * This is the primary entry point for interacting with the TMDB API. It provides
@@ -23,24 +23,24 @@ import { HttpClient, TmdbConfig } from "./utils";
  * @example
  * ```typescript
  * // Basic initialization
- * const tsmdb = new Tmdb({
+ * const typemdb = new TMDB({
  *   apiKey: 'your_api_key_here',
  *   baseUrl: 'https://api.themoviedb.org/3' // optional
  * });
  *
  * // Using different API domains
- * const accountDetails = await tsmdb.account.getDetails(123);
- * const movieCerts = await tsmdb.certifications.getMovieCertifications();
+ * const accountDetails = await typemdb.account.getDetails(123);
+ * const movieCerts = await typemdb.certifications.getMovieCertifications();
  * ```
  */
-export class Tsmdb {
+export class TMDB {
   private readonly http: HttpClient;
 
   /**
    * Account management and user-specific data
    * @example
    * ```typescript
-   * await tsmdb.account.getWatchlistMovies(123);
+   * await typemdb.account.getWatchlistMovies(123);
    * ```
    */
   public account: AccountApi;
@@ -49,7 +49,7 @@ export class Tsmdb {
    * Authentication and session management
    * @example
    * ```typescript
-   * const session = await tsmdb.auth.createSession(requestToken);
+   * const session = await typemdb.auth.createSession(requestToken);
    * ```
    */
   public auth: AuthApi;
@@ -58,7 +58,7 @@ export class Tsmdb {
    * Content certification data
    * @example
    * ```typescript
-   * const certifications = await tsmdb.certifications.getTvCertifications();
+   * const certifications = await typemdb.certifications.getTvCertifications();
    * ```
    */
   public certifications: CertsApi;
@@ -67,7 +67,7 @@ export class Tsmdb {
    * Change tracking functionality
    * @example
    * ```typescript
-   * const changes = await tsmdb.changes.getChangedMovieIds({
+   * const changes = await typemdb.changes.getChangedMovieIds({
    *   start_date: new Date('2023-01-01'),
    *   end_date: new Date('2023-01-31')
    * });
@@ -84,20 +84,20 @@ export class Tsmdb {
    * @example
    * ```typescript
    * // Initialize the client
-   * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
+   * const typemdb = new TMDB({ apiKey: 'your_api_key' });
    *
    * // Get details for the Star Wars collection (ID: 10)
-   * const starWars = await tsmdb.collection.getDetails(10, {
+   * const starWars = await typemdb.collection.getDetails(10, {
    *   language: 'en-US'
    * });
    *
    * // Get images for the James Bond collection
-   * const bondImages = await tsmdb.collection.getImages(645, {
+   * const bondImages = await typemdb.collection.getImages(645, {
    *   include_image_language: 'en,null'
    * });
    *
    * // Get available translations for a collection
-   * const translations = await tsmdb.collection.getTranslations(10);
+   * const translations = await typemdb.collection.getTranslations(10);
    * ```
    */
   public collection: CollectionsApi;
@@ -116,7 +116,7 @@ export class Tsmdb {
    * Creates a new TMDB client instance
    * @param config - Configuration options
    */
-  constructor(config: TmdbConfig) {
+  constructor(config: TMDBConfig) {
     this.http = new HttpClient(config);
     this.account = new AccountApi(this.http);
     this.auth = new AuthApi(this.http);

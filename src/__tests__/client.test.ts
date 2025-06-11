@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { Tmdbts } from "../client";
-import { HttpClient, type TmdbConfig } from "../utils";
+import { TMDB } from "../client";
+import { HttpClient, type TMDBConfig } from "../utils";
 import {
   AccountApi,
   AuthApi,
@@ -15,7 +15,7 @@ import {
 } from "../api";
 
 vi.mock("../utils/http", () => ({
-  HttpClient: vi.fn((config: TmdbConfig) => ({
+  HttpClient: vi.fn((config: TMDBConfig) => ({
     apiKey: config.apiKey,
     baseUrl: config.baseUrl ?? "https://api.themoviedb.org/3",
     headers: {
@@ -60,7 +60,7 @@ vi.mock("../api/guest", () => ({
   GuestApi: vi.fn(() => ({})),
 }));
 
-describe("Tmdbts Client", () => {
+describe("TMDB Client", () => {
   const testConfig = {
     apiKey: "test-api-key",
     baseUrl: "https://api.test.tmdb.org/3",
@@ -71,14 +71,14 @@ describe("Tmdbts Client", () => {
   });
 
   it("should initialize with provided configuration", () => {
-    new Tmdbts(testConfig);
+    new TMDB(testConfig);
 
     expect(HttpClient).toHaveBeenCalledTimes(1);
     expect(HttpClient).toHaveBeenCalledWith(testConfig);
   });
 
   it("should initialize all API sub-clients", () => {
-    const client = new Tmdbts(testConfig);
+    const client = new TMDB(testConfig);
 
     expect(client.account).toBeDefined();
     expect(client.auth).toBeDefined();
@@ -96,7 +96,7 @@ describe("Tmdbts Client", () => {
     const mockHttpInstance = new HttpClient(testConfig);
     vi.mocked(HttpClient).mockReturnValueOnce(mockHttpInstance);
 
-    new Tmdbts(testConfig);
+    new TMDB(testConfig);
 
     const apiConstructors = [
       vi.mocked(AccountApi),
@@ -118,7 +118,7 @@ describe("Tmdbts Client", () => {
 
   describe("getClientInfo()", () => {
     it("should return client configuration info", () => {
-      const client = new Tmdbts(testConfig);
+      const client = new TMDB(testConfig);
       const mockHttpInstance = vi.mocked(HttpClient).mock.results[0].value;
 
       mockHttpInstance.client = {
@@ -141,7 +141,7 @@ describe("Tmdbts Client", () => {
     });
 
     it("should handle missing configuration gracefully", () => {
-      const client = new Tmdbts({ apiKey: "test" });
+      const client = new TMDB({ apiKey: "test" });
       const mockHttpInstance = vi.mocked(HttpClient).mock.results[0].value;
 
       mockHttpInstance.client = { defaults: {} };
@@ -157,7 +157,7 @@ describe("Tmdbts Client", () => {
   });
 
   // it("should use default baseUrl if not provided", () => {
-  //   const _client = new Tmdbts({ apiKey: "test" });
+  //   const _client = new TMDB({ apiKey: "test" });
   //
   //   console.log("HttpClient mock calls:", vi.mocked(HttpClient).mock.calls);
   //

@@ -19,7 +19,6 @@ type Operation = {
 export function getOpenApiExample<
   TPath extends keyof paths,
   TMethod extends keyof paths[TPath],
-  // Simplify TStatus to string, as status codes are typically strings (e.g., "200")
   TStatus extends string,
 >(
   path: TPath,

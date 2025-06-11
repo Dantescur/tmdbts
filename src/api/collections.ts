@@ -16,15 +16,15 @@ import { HttpClient } from "../utils";
  * @example
  * ```typescript
  * // Initialize the client
- * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
+ * const typemdb = new TMDB({ apiKey: 'your_api_key' });
  *
  * // Get collection details
- * const collection = await tsmdb.collection.getDetails(10, {
+ * const collection = await typemdb.collection.getDetails(10, {
  *   language: 'en-US'
  * });
  *
  * // Get collection images
- * const images = await tsmdb.collection.getCollectionImages(10, {
+ * const images = await typemdb.collection.getCollectionImages(10, {
  *   include_image_language: 'en,null'
  * });
  * ```
@@ -45,7 +45,7 @@ export class CollectionsApi {
    * @example
    * ```typescript
    * // Get Star Wars collection details in French
-   * const starWars = await tsmdb.collection.getDetails(10, {
+   * const starWars = await typemdb.collection.getDetails(10, {
    *   language: 'fr-FR'
    * });
    * console.log(starWars.overview); // "Luke Skywalker, la Princesse Leia, Dark Vador, C3PO, R2D2 et de nombreux..."
@@ -67,7 +67,7 @@ export class CollectionsApi {
    * @example
    * ```typescript
    * // Get all English images for a collection
-   * const images = await tsmdb.collection.getImages(10, {
+   * const images = await typemdb.collection.getImages(10, {
    *   include_image_language: 'en',
    *   language: 'en-US'
    * });
@@ -89,7 +89,7 @@ export class CollectionsApi {
    * @example
    * ```typescript
    * // Get translations for a collection
-   * const translations = await tsmdb.collection.getTranslations(10);
+   * const translations = await typemdb.collection.getTranslations(10);
    * console.log('Available translations:', translations.translations.map(t => t.english_name));
    * ```
    */

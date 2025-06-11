@@ -8,7 +8,7 @@ import {
   ValidateKeyResponse,
   ValidateWithLoginParams,
 } from "../types";
-import { HttpClient, TmdbError } from "../utils";
+import { HttpClient, TMDBError } from "../utils";
 
 /**
  * Handles TMDB authentication and session management
@@ -23,13 +23,13 @@ import { HttpClient, TmdbError } from "../utils";
  *
  * @example
  * ```typescript
- * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
+ * const typemdb = new TMDB({ apiKey: 'your_api_key' });
  *
  * // Full authentication flow example:
- * const token = await tsmdb.auth.createRequestToken();
- * const authUrl = tsmdb.auth.getAuthenticationUrl(token.request_token);
+ * const token = await typemdb.auth.createRequestToken();
+ * const authUrl = typemdb.auth.getAuthenticationUrl(token.request_token);
  * // Redirect user to authUrl...
- * const session = await tsmdb.auth.createSession(token.request_token);
+ * const session = await typemdb.auth.createSession(token.request_token);
  * ```
  */
 export class AuthApi {
@@ -54,7 +54,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const { request_token } = await tsmdb.auth.createRequestToken();
+   * const { request_token } = await typemdb.auth.createRequestToken();
    * ```
    */
   async createRequestToken(): Promise<RequestTokenResponse> {
@@ -74,7 +74,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const url = tsmdb.auth.getAuthenticationUrl(token, 'https://myapp.com/callback');
+   * const url = typemdb.auth.getAuthenticationUrl(token, 'https://myapp.com/callback');
    * ```
    */
   getAuthenticationUrl(requestToken: string, redirectTo?: string): string {
@@ -97,7 +97,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const session = await tsmdb.auth.createSession(approvedToken);
+   * const session = await typemdb.auth.createSession(approvedToken);
    * ```
    */
   async createSession(requestToken: string): Promise<SessionResponse> {
@@ -128,7 +128,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const { success } = await tsmdb.auth.validateKey();
+   * const { success } = await typemdb.auth.validateKey();
    * ```
    */
   async validateKey(): Promise<ValidateKeyResponse> {
@@ -165,7 +165,7 @@ export class AuthApi {
     data: ValidateWithLoginParams,
   ): Promise<RequestTokenResponse> {
     if (!data.password || !data.username || !data.request_token) {
-      throw new TmdbError("Missing reuired fields");
+      throw new TMDBError("Missing reuired fields");
     }
     return this.http.post("/authentication/token/validate_with_login", {
       body: {
