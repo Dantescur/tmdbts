@@ -2,7 +2,9 @@
   "name": "tsmdb",
   "version": "1.0.0",
   "type": "module",
-  "repository": "https://github.com/dantescur/tsmdb",
+  "repository": {
+  "url": "https://github.com/dantescur/tsmdb",
+  },
   "description": "A type-safe, intuitive TypeScript library for the TMDB API",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
