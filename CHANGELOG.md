@@ -1,3 +1,11 @@
+# [1.1.0-beta.1](https://github.com/Dantescur/typemdb/compare/v1.0.0...v1.1.0-beta.1) (2025-06-11)
+
+
+### Features
+
+* **keywords:** finished keywords endpoint and test ([90f6a65](https://github.com/Dantescur/typemdb/commit/90f6a65ed1040f9fb6fce5ad305ea4030c1704bc))
+* **keywords:** finished keywords endpoint and test ([bc1eeab](https://github.com/Dantescur/typemdb/commit/bc1eeabac0bd997df2a5aa8bf5831d5bb329a0fa))
+
 # 1.0.0 (2025-06-11)
 
 
