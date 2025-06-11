@@ -8,6 +8,7 @@ import {
   CompaniesApi,
   CreditsApi,
   DiscoverApi,
+  GenresApi,
   GuestApi,
 } from "./api";
 import { HttpClient, TmdbConfig } from "./utils";
@@ -107,6 +108,10 @@ export class Tmdbts {
 
   public discover: DiscoverApi;
 
+  public genres: GenresApi;
+
+  public guest: GuestApi;
+
   /**
    * Creates a new TMDB client instance
    * @param config - Configuration options
@@ -121,6 +126,8 @@ export class Tmdbts {
     this.company = new CompaniesApi(this.http);
     this.credit = new CreditsApi(this.http);
     this.discover = new DiscoverApi(this.http);
+    this.genres = new GenresApi(this.http);
+    this.guest = new GuestApi(this.http);
   }
 
   public getClientInfo(): {

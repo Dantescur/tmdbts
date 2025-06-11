@@ -10,5 +10,6 @@ export * from "./collections";
 export * from "./companies";
 export * from "./credits";
 export * from "./discover";
+export * from "./genres";
 export * from "./config";
 export * from "./guest";
