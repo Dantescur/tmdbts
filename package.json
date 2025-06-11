@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "repository": {
-  "url": "https://github.com/dantescur/tsmdb",
+  "url": "https://github.com/dantescur/tsmdb"
   },
   "description": "A type-safe, intuitive TypeScript library for the TMDB API",
   "main": "./dist/index.cjs",
@@ -26,7 +26,7 @@
     "movies",
     "tv"
   ],
-  "author": "Cesar Daniel <cesardaniel.9611@gmail.com",
+  "author": "Cesar Daniel <cesardaniel.9611@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsdown --from-vite vitest",
