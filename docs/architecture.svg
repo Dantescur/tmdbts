@@ -5,16 +5,16 @@
 #arrowSize: 1.5
 #.interface: fill=#e6f7ff
 #direction: right
-[Tmdbts|-http: HttpClient;+account: AccountApi;+auth: AuthApi;+certifications: CertsApi;+changes: ChangesApi;+collection: CollectionsApi;+company: CompaniesApi;+credit: CreditsApi;+discover: DiscoverApi|+getClientInfo(): { baseUrl: string; headers: Record&lt;string, string&gt;; apiKeyMasked: string; }]
-[Tmdbts]  -  [HttpClient]
-[Tmdbts]  -  [AccountApi]
-[Tmdbts]  -  [AuthApi]
-[Tmdbts]  -  [CertsApi]
-[Tmdbts]  -  [ChangesApi]
-[Tmdbts]  -  [CollectionsApi]
-[Tmdbts]  -  [CompaniesApi]
-[Tmdbts]  -  [CreditsApi]
-[Tmdbts]  -  [DiscoverApi]
+[Tsmdb|-http: HttpClient;+account: AccountApi;+auth: AuthApi;+certifications: CertsApi;+changes: ChangesApi;+collection: CollectionsApi;+company: CompaniesApi;+credit: CreditsApi;+discover: DiscoverApi|+getClientInfo(): { baseUrl: string; headers: Record&lt;string, string&gt;; apiKeyMasked: string; }]
+[Tsmdb]  -  [HttpClient]
+[Tsmdb]  -  [AccountApi]
+[Tsmdb]  -  [AuthApi]
+[Tsmdb]  -  [CertsApi]
+[Tsmdb]  -  [ChangesApi]
+[Tsmdb]  -  [CollectionsApi]
+[Tsmdb]  -  [CompaniesApi]
+[Tsmdb]  -  [CreditsApi]
+[Tsmdb]  -  [DiscoverApi]
 [AccountApi|-http: HttpClient|-buildQueryParams(): CommonParams;+getDetails(): Promise&lt;DetailsResponse&gt;;+markAsFavorite(): Promise&lt;FavoriteResponse&gt;;+getFavoriteMovies(): Promise&lt;FavoritesResponse&gt;;+getFavoriteTVShows(): Promise&lt;FavoritesResponse&gt;;+addToWatchlist(): Promise&lt;WatchlistResponse&gt;;+getWatchlistMovies(): Promise&lt;WatchlistMoviesResponse&gt;;+getWatchlistTv(): Promise&lt;WatchlistTvResponse&gt;;+getLists(): Promise&lt;ListsResponse&gt;;+getRatedMovies(): Promise&lt;RatedMoviesResponse&gt;;+getRatedTVShows(): Promise&lt;RatedTvResponse&gt;;+getRatedTVEpisodes(): Promise&lt;RatedTvEpisodesResponse&gt;]
 [AccountApi]  -  [HttpClient]
 [AuthApi|-http: HttpClient|+createRequestToken(): Promise&lt;RequestTokenResponse&gt;;+getAuthenticationUrl(): string;+createSession(): Promise&lt;SessionResponse&gt;;+createGuestSession(): Promise&lt;GuestSessionResponse&gt;;+validateKey(): Promise&lt;ValidateKeyResponse&gt;;+createSessionFromV4Token(): Promise&lt;SessionResponse&gt;;+validateWithLogin(): Promise&lt;RequestTokenResponse&gt;;+deleteSession(): Promise&lt;DeleteSessionResponse&gt;]
@@ -67,38 +67,38 @@
 <path d="M881.5 1624.5 L1012 1624.5 L1146.7570247933884 1108.5 L1146.8 1108.5 " fill="none"></path>
 <path d="M866.5 1785.0 L1012 1785 L1151.630306988896 1108.5 L1151.6 1108.5 " fill="none"></path>
 <path d="M939.0 1945.5 L1012 1945.5 L1154.8142548596113 1108.5 L1154.8 1108.5 " fill="none"></path>
-<g data-name="Tmdbts">
-<g fill="#eee8d5" stroke="#33322E" data-name="Tmdbts">
-<rect x="44.0" y="643.0" height="275.0" width="274.0" data-name="Tmdbts"></rect>
-<path d="M44.0 675.0 L318.0 675.0" fill="none" data-name="Tmdbts"></path>
-<path d="M44.0 837.0 L318.0 837.0" fill="none" data-name="Tmdbts"></path>
+<g data-name="Tsmdb">
+<g fill="#eee8d5" stroke="#33322E" data-name="Tsmdb">
+<rect x="44.0" y="643.0" height="275.0" width="274.0" data-name="Tsmdb"></rect>
+<path d="M44.0 675.0 L318.0 675.0" fill="none" data-name="Tsmdb"></path>
+<path d="M44.0 837.0 L318.0 837.0" fill="none" data-name="Tsmdb"></path>
 </g>
-<g transform="translate(44, 643)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Tmdbts" data-compartment="0">
-<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Tmdbts" data-compartment="0">
-<a id="../src/client.ts.Tmdbts" xlink:href="../src/client.ts"><text x="129.0" y="14.1" stroke="none" text-anchor="middle" data-name="Tmdbts" data-compartment="0">Tmdbts</text></a>
+<g transform="translate(44, 643)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Tsmdb" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Tsmdb" data-compartment="0">
+<a id="../src/client.ts.Tsmdb" xlink:href="../src/client.ts"><text x="129.0" y="14.1" stroke="none" text-anchor="middle" data-name="Tsmdb" data-compartment="0">Tsmdb</text></a>
 
 </g>
 </g>
-<g transform="translate(44, 675)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tmdbts" data-compartment="1">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tmdbts" data-compartment="1">
-<text x="0.0" y="14.1" stroke="none" data-name="Tmdbts" data-compartment="1">-http: HttpClient</text>
-<text x="0.0" y="30.3" stroke="none" data-name="Tmdbts" data-compartment="1">+account: AccountApi</text>
-<text x="0.0" y="46.5" stroke="none" data-name="Tmdbts" data-compartment="1">+auth: AuthApi</text>
-<text x="0.0" y="62.7" stroke="none" data-name="Tmdbts" data-compartment="1">+certifications: CertsApi</text>
-<text x="0.0" y="78.9" stroke="none" data-name="Tmdbts" data-compartment="1">+changes: ChangesApi</text>
-<text x="0.0" y="95.1" stroke="none" data-name="Tmdbts" data-compartment="1">+collection: CollectionsApi</text>
-<text x="0.0" y="111.3" stroke="none" data-name="Tmdbts" data-compartment="1">+company: CompaniesApi</text>
-<text x="0.0" y="127.5" stroke="none" data-name="Tmdbts" data-compartment="1">+credit: CreditsApi</text>
-<text x="0.0" y="143.7" stroke="none" data-name="Tmdbts" data-compartment="1">+discover: DiscoverApi</text>
+<g transform="translate(44, 675)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tsmdb" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tsmdb" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Tsmdb" data-compartment="1">-http: HttpClient</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Tsmdb" data-compartment="1">+account: AccountApi</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Tsmdb" data-compartment="1">+auth: AuthApi</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Tsmdb" data-compartment="1">+certifications: CertsApi</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Tsmdb" data-compartment="1">+changes: ChangesApi</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Tsmdb" data-compartment="1">+collection: CollectionsApi</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Tsmdb" data-compartment="1">+company: CompaniesApi</text>
+<text x="0.0" y="127.5" stroke="none" data-name="Tsmdb" data-compartment="1">+credit: CreditsApi</text>
+<text x="0.0" y="143.7" stroke="none" data-name="Tsmdb" data-compartment="1">+discover: DiscoverApi</text>
 
 </g>
 </g>
-<g transform="translate(44, 837)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tmdbts" data-compartment="2">
-<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tmdbts" data-compartment="2">
-<text x="0.0" y="14.1" stroke="none" data-name="Tmdbts" data-compartment="2">+getClientInfo(): { baseUrl: string</text>
-<text x="0.0" y="30.3" stroke="none" data-name="Tmdbts" data-compartment="2">headers: Record&lt;string, string&gt;</text>
-<text x="0.0" y="46.5" stroke="none" data-name="Tmdbts" data-compartment="2">apiKeyMasked: string</text>
-<text x="0.0" y="62.7" stroke="none" data-name="Tmdbts" data-compartment="2">}</text>
+<g transform="translate(44, 837)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Tsmdb" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Tsmdb" data-compartment="2">
+<text x="0.0" y="14.1" stroke="none" data-name="Tsmdb" data-compartment="2">+getClientInfo(): { baseUrl: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Tsmdb" data-compartment="2">headers: Record&lt;string, string&gt;</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Tsmdb" data-compartment="2">apiKeyMasked: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Tsmdb" data-compartment="2">}</text>
 
 </g>
 </g>

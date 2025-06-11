@@ -23,13 +23,13 @@ import { HttpClient, TmdbError } from "../utils";
  *
  * @example
  * ```typescript
- * const tmdbts = new Tmdbts({ apiKey: 'your_api_key' });
+ * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
  *
  * // Full authentication flow example:
- * const token = await tmdbts.auth.createRequestToken();
- * const authUrl = tmdbts.auth.getAuthenticationUrl(token.request_token);
+ * const token = await tsmdb.auth.createRequestToken();
+ * const authUrl = tsmdb.auth.getAuthenticationUrl(token.request_token);
  * // Redirect user to authUrl...
- * const session = await tmdbts.auth.createSession(token.request_token);
+ * const session = await tsmdb.auth.createSession(token.request_token);
  * ```
  */
 export class AuthApi {
@@ -54,7 +54,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const { request_token } = await tmdbts.auth.createRequestToken();
+   * const { request_token } = await tsmdb.auth.createRequestToken();
    * ```
    */
   async createRequestToken(): Promise<RequestTokenResponse> {
@@ -74,7 +74,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const url = tmdbts.auth.getAuthenticationUrl(token, 'https://myapp.com/callback');
+   * const url = tsmdb.auth.getAuthenticationUrl(token, 'https://myapp.com/callback');
    * ```
    */
   getAuthenticationUrl(requestToken: string, redirectTo?: string): string {
@@ -97,7 +97,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const session = await tmdbts.auth.createSession(approvedToken);
+   * const session = await tsmdb.auth.createSession(approvedToken);
    * ```
    */
   async createSession(requestToken: string): Promise<SessionResponse> {
@@ -128,7 +128,7 @@ export class AuthApi {
    *
    * @example
    * ```typescript
-   * const { success } = await tmdbts.auth.validateKey();
+   * const { success } = await tsmdb.auth.validateKey();
    * ```
    */
   async validateKey(): Promise<ValidateKeyResponse> {

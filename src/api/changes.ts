@@ -11,17 +11,17 @@ import { HttpClient } from "../utils";
  * @example
  * ```typescript
  * // Initialize the client
- * const tmdbts = new Tmdbts({ apiKey: 'your_api_key' });
+ * const tsmdb = new Tsmdb({ apiKey: 'your_api_key' });
  *
  * // Get recently changed movie IDs
- * const changedMovies = await tmdbts.changes.getChangedMovieIds({
+ * const changedMovies = await tsmdb.changes.getChangedMovieIds({
  *   start_date: new Date('2023-01-01'),
  *   end_date: new Date('2023-01-07'),
  *   page: 1
  * });
  *
  * // Get recently changed TV show IDs
- * const changedShows = await tmdbts.changes.getChangedTvShowIds({
+ * const changedShows = await tsmdb.changes.getChangedTvShowIds({
  *   start_date: new Date('2023-01-01'),
  *   end_date: new Date('2023-01-07'),
  *   page: 1
@@ -46,7 +46,7 @@ export class ChangesApi {
    *
    * @example
    * ```typescript
-   * const changes = await tmdbts.changes.getChangedMovieIds({
+   * const changes = await tsmdb.changes.getChangedMovieIds({
    *   start_date: new Date('2023-01-01'),
    *   end_date: new Date('2023-01-31'),
    *   page: 1
@@ -69,7 +69,7 @@ export class ChangesApi {
    *
    * @example
    * ```typescript
-   * const changes = await tmdbts.changes.getChangedTvShowIds({
+   * const changes = await tsmdb.changes.getChangedTvShowIds({
    *   start_date: new Date(Date.now() - 86400000), // Yesterday
    *   end_date: new Date() // Now
    * });
@@ -94,7 +94,7 @@ export class ChangesApi {
    * const weekAgo = new Date();
    * weekAgo.setDate(weekAgo.getDate() - 7);
    *
-   * const changes = await tmdbts.changes.getChangedPersonIds({
+   * const changes = await tsmdb.changes.getChangedPersonIds({
    *   start_date: weekAgo,
    *   end_date: new Date()
    * });
