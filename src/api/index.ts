@@ -13,3 +13,4 @@ export * from "./discover";
 export * from "./genres";
 export * from "./config";
 export * from "./guest";
+export * from "./keywords";

@@ -19,6 +19,7 @@ export * from "./guest";
 export * from "./movie";
 export * from "./tv";
 export * from "./schema";
+export * from "./keywords";
 
 export const DEFAULT_COMMON_PARAMS: CommonParams = {
   language: "en-US",

@@ -1,7 +1,8 @@
 /*
   types/tv.ts
 */
-import { Genre, ProductionCompany, ProductionCountry } from "./movie";
+import { Genre } from "./genres";
+import { ProductionCompany, ProductionCountry } from "./movie";
 
 export interface Network {
   id: number;
