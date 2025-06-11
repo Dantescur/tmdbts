@@ -4,7 +4,8 @@
   "type": "module",
   "homepage": "https://github.com/dantescur/typemdb",
   "repository": {
-    "url": "https://github.com/dantescur/typemdb"
+    "url": "git+https://github.com/dantescur/typemdb.git",
+    "type": "git"
   },
   "description": "A type-safe, intuitive TypeScript library for the TMDB API",
   "main": "./dist/index.cjs",
@@ -80,6 +81,7 @@
     }
   },
   "publishConfig": {
-    "provenance": true
+    "provenance": true,
+    "access": "public"
   }
 }
